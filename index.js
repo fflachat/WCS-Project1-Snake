@@ -1,2 +1,3 @@
-/* eslint-disable linebreak-style */
-console.log('toto ');
+
+console.log('toto');
+
