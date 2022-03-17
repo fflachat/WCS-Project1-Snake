@@ -1,0 +1,26 @@
+{
+  "name": "wcs-project1-snake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "validate-all-html": "w3c-html-validator"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fflachat/WCS-Project1-Snake.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fflachat/WCS-Project1-Snake/issues"
+  },
+  "homepage": "https://github.com/fflachat/WCS-Project1-Snake#readme",
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "w3c-html-validator": "^1.0.3"
+  }
+}
