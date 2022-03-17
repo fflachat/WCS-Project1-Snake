@@ -8,6 +8,8 @@
     <title>Game</title>
   </head>
   <body>
+    <header class="desktop"></header>
+
     <div class="score">
       <h1>Score :</h1>
       <h2>X Pts</h2>
@@ -15,33 +17,54 @@
     <canvas id="canvas"> </canvas>
     <div id="display"></div>
 
-    <div class="gamepadBtn mobile">
-      <button class="directionBtn" id="up">Up</button>
-      <button class="directionBtn" id="down">Down</button>
-      <button class="directionBtn" id="left">Left</button>
-      <button class="directionBtn" id="right">Right</button>
-    </div>
+    <div class="controleInfo">
+      <div class="gamepadBtn mobile">
+        <button class="directionBtn" id="up">Up</button>
+        <button class="directionBtn" id="down">Down</button>
+        <button class="directionBtn" id="left">Left</button>
+        <button class="directionBtn" id="right">Right</button>
+      </div>
 
-    <div class="desktop">
-      <p>Play with the keyboard arrow keys</p>
+      <div class="desktop">
+        <p>Play with the keyboard arrow keys</p>
+      </div>
     </div>
 
     <nav>
-      <ul>
+      <ul class="gridNav">
         <li>
-          <a href="#"><img src="assets/" alt="" /></a>
+          <a href="#"
+            ><img src="assets/home.png" class="icons mobile" />
+            <div class="desktop">Home</div></a
+          >
         </li>
         <li>
-          <a href="#"><img src="assets/" alt="" /></a>
+          <a href="#"
+            ><img src="assets/setting-outlined.png" class="icons mobile" />
+            <div class="desktop">Setting</div></a
+          >
         </li>
         <li>
-          <a href="#"><img src="assets/" alt="" /></a>
+          <a href="#"
+            ><img
+              src="assets/play-circle-outlined.png"
+              class="icons mobile"
+              id="iconPlay"
+            />
+            <div class="desktop">Play</div></a
+          >
         </li>
         <li>
-          <a href="#"><img src="assets/" alt="" /></a>
+          <a href="#"
+            ><img src="assets/star.png" class="icons mobile" />
+            <div class="desktop">Score</div></a
+          >
         </li>
         <li>
-          <a href="#"><img src="assets/" alt="" /></a>
+          <a href="#"
+            ><img src="assets/person.png" class="icons mobile" />
+            <div class="desktop">About Us</div></a
+          >
         </li>
       </ul>
     </nav>

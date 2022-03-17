@@ -4,7 +4,54 @@
   --thridColor: #ffb400;
 }
 
+/* --------------NAVIGATION BAR------------ */
+
+nav {
+  background-color: var(--thridColor);
+  height: 8vh;
+  width: 90%;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gridNav {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons {
+  width: 30px;
+  height: 30px;
+}
+
+#iconPlay {
+  width: 50px;
+  height: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 /*-------------GAME PAGE------------------ */
+* {
+  padding: 0;
+  margin: 0;
+}
 
 /* General */
 html {
@@ -17,6 +64,10 @@ body {
   justify-content: space-between;
   align-items: center;
   color: white;
+}
+
+header {
+  background-color: var(--thridColor);
 }
 
 /* Display score */
@@ -77,11 +128,22 @@ canvas {
   grid-row: 2;
 }
 
+footer {
+  background-color: var(--thridColor);
+  height: 8vh;
+  width: 95%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 50px;
+  height: 30px;
+}
+
 .desktop {
   display: none;
 }
 
-/* Desktop version / Adaption */
+/* --------Desktop version / Adaption -----------*/
 
 @media screen and (min-width: 600px) {
   .mobile {
@@ -90,5 +152,9 @@ canvas {
 
   .desktop {
     display: block;
+  }
+
+  nav {
+    order: -1;
   }
 } ;
