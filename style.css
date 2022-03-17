@@ -4,11 +4,12 @@
   --thridColor: #ffb400;
 }
 
+/*-------------GAME PAGE------------------ */
+
+/* General */
 html {
   background-color: var(--bgColor);
 }
-
-/*GAME PAGE */
 
 body {
   display: flex;
@@ -18,6 +19,7 @@ body {
   color: white;
 }
 
+/* Display score */
 .score {
   color: var(--thridColor);
   display: flex;
@@ -26,6 +28,7 @@ body {
   align-items: baseline;
 }
 
+/* Display game */
 canvas {
   width: 80%;
   height: 300px;
@@ -35,6 +38,7 @@ canvas {
   box-shadow: 0px 4px 20px 0px #00000080 inset;
 }
 
+/* Style for the gamepad */
 .gamepadBtn {
   display: grid;
   width: 150px;
@@ -72,3 +76,19 @@ canvas {
   grid-column: 1;
   grid-row: 2;
 }
+
+.desktop {
+  display: none;
+}
+
+/* Desktop version / Adaption */
+
+@media screen and (min-width: 600px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+} ;
