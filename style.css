@@ -70,6 +70,21 @@ header {
   background-color: var(--thridColor);
 }
 
+footer {
+  background-color: var(--thridColor);
+  height: 8vh;
+  width: 95%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 50px;
+  height: 30px;
+}
+
+.desktop {
+  display: none;
+}
+
 /* Display score */
 .score {
   color: var(--thridColor);
@@ -126,21 +141,6 @@ canvas {
 #right {
   grid-column: 1;
   grid-row: 2;
-}
-
-footer {
-  background-color: var(--thridColor);
-  height: 8vh;
-  width: 95%;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding-top: 50px;
-  height: 30px;
-}
-
-.desktop {
-  display: none;
 }
 
 /* --------Desktop version / Adaption -----------*/
