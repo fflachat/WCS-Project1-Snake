@@ -9,47 +9,60 @@
   </head>
   <body>
     <main>
-      <h1>Settings</h1>
-      <section class="speed">
-        <h2>Speed</h2>
-        <div class="slider"></div>
-      </section>
-      <section>
-        <h3>Walls :</h3>
-        <label class="switch">
-          <input type="checkbox" />
-          <span class="slider round"></span>
-        </label>
-      </section>
-      <section>
-        <h3>Nightmode :</h3>
-        <label class="switch">
-          <input type="checkbox" />
-          <span class="slider round"></span>
-        </label>
-      </section>
-      <section class="sound">
-        <h2>Sound</h2>
-        <div class="slider"></div>
-      </section>
+      <div class="titre"><h1>Settings</h1></div>
+      <div class="settings">
+        <section class="speed">
+          <div class="speedSoundTitre"><h2>Speed :</h2></div>
+
+          <div class="sliders">
+            <input type="checkbox" name="sliderspd" id="sliderspd" />
+            <label for="sliderspd"></label>
+          </div>
+        </section>
+        <section class="walls">
+          <div class="wallNightmodeTitre"><h3>Walls :</h3></div>
+          <div class="switchbox">
+            <input type="checkbox" name="switchw" id="switchw" />
+            <label for="switchw"></label>
+          </div>
+        </section>
+        <section class="nightmode">
+          <div class="wallNightmodeTitre"><h3>Nightmode :</h3></div>
+          <div class="switchbox">
+            <input type="checkbox" name="switchwnm" id="switchwnm" />
+            <label for="switchwnm"></label>
+          </div>
+        </section>
+        <section class="sound">
+          <div class="speedSoundTitre"><h2>Sound :</h2></div>
+          <div class="sliders">
+            <input type="checkbox" name="slidersnd" id="slidersnd" />
+            <label for="slidersnd"></label>
+          </div>
+        </section>
+      </div>
     </main>
 
     <nav>
       <ul class="grid">
         <li>
-          <a href="#"><img src="assets/home.png" class="icons"/></a>
+          <a href="#"><img src="assets/home.png" class="icons" /></a>
         </li>
         <li>
-          <a href="#"><img src="assets/setting-outlined.png" class="icons"/></a>
+          <a href="#"
+            ><img src="assets/setting-outlined.png" class="icons"
+          /></a>
         </li>
         <li>
-          <a href="#"><img src="assets/play-circle-outlined.png" class="icons"/></a>
+          <a href="#"
+            ><img src="assets/play-circle-outlined.png" class="icons"
+          /></a>
         </li>
         <li>
-          <a href="#"><img src="assets/star.png" class="icons"/></a>
+          <a href="#"><img src="assets/star.png" class="icons" /></a>
         </li>
         <li>
-          <a href="#"><img src="assets/person.png" class="icons"/></a>
+          <a href="#"><img src="assets/person.png" class="icons" /></a>
         </li>
       </ul>
     </nav>
