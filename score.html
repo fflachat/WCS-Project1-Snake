@@ -8,97 +8,99 @@
     <link rel="stylesheet" href="score.css" />
   </head>
   <body>
-    <h1>Scores</h1>
-    <section class="Podium">
-      <h3>
-        Julie
-        <p>2000pts</p>
-      </h3>
-      <h2>
-        Adnan
+    <main>
+      <h1>Scores</h1>
+      <section class="firstName">
+        <h2>Adnan</h2>
+        <p>3450 Pts</p>
+      </section>
+      <section class="Podium">
+        <div class="secondName">
+          <h2>Julie</h2>
+          <h3>2000 Pts</h3>
+        </div>
+        <div class="secondPlace"><p>2nd</p></div>
+        <div class="firstPlace"><p>1st</p></div>
+        <div class="thirdName">
+          <h2>Isma</h2>
+          <h3>1500 Pts</p>
+        </div>
+        <div class="thirdPlace"><p>3rd</p></div>
+      </section>
+      <section class="scoreSection">
+        <div class="tableau">
+          <table>
+            <tr>
+              <td>4ème</td>
+              <td class="centerName">Thierno</td>
+              <td>1200pts</td>
+            </tr>
+            <tr>
+              <td>5ème</td>
+              <td class="centerName">Florent</td>
+              <td>1000pts</td>
+            </tr>
+            <tr>
+              <td>6ème</td>
+              <td class="centerName"></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>7ème</td>
+              <td class="centerName"></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>8ème</td>
+              <td class="centerName"></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </main>
 
-        <p>3450pts</p>
-      </h2>
+    <nav>
+      <ul class="gridNav">
+        <li>
+          <a href="./index.html"
+            ><img src="assets/home.png" class="icons mobile" />
+            <div class="desktop">Home</div></a
+          >
+        </li>
+        <li>
+          <a href="./setting.html"
+            ><img src="assets/setting-outlined.png" class="icons mobile" />
+            <div class="desktop">Setting</div></a
+          >
+        </li>
+        <li>
+          <a href="./game.html"
+            ><img
+              src="assets/play-circle-outlined.png"
+              class="icons mobile"
+              id="iconPlay"
+            />
+            <div class="desktop">Play</div></a
+          >
+        </li>
+        <li>
+          <a href="./score.html"
+            ><img src="assets/star.png" class="icons mobile" />
+            <div class="desktop">Score</div></a
+          >
+        </li>
+        <li>
+          <a href="./about.html"
+            ><img src="assets/person.png" class="icons mobile" />
+            <div class="desktop">About Us</div></a
+          >
+        </li>
+      </ul>
+    </nav>
 
-      <h4>
-        Flo
-        <p>1500pts</p>
-      </h4>
-    </section>
-    <table>
-      <tr>
-        <th>Rank</th>
-        <th>Name</th>
-        <th>Score</th>
-      </tr>
-      <tr>
-        <td>4ème</td>
-        <td>Isma</td>
-        <td>1200pts</td>
-      </tr>
-      <tr>
-        <td>5ème</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>6ème</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>7ème</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>8ème</td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
+    <footer class="desktop"><p>&#169; Super 5 Snake</p></footer>
 
     <script src="score.js"></script>
-
-    <footer>
-      <nav>
-        <ul class="grid">
-          <li>
-            <a href="./index.html"
-              ><img src="assets/home.png" class="icons mobile" />
-              <div class="desktop">Home</div></a
-            >
-          </li>
-          <li>
-            <a href="./setting.html"
-              ><img src="assets/setting-outlined.png" class="icons mobile" />
-              <div class="desktop">Setting</div></a
-            >
-          </li>
-          <li>
-            <a href="./game.html"
-              ><img
-                src="assets/play-circle-outlined.png"
-                class="icons mobile"
-                id="iconPlay"
-              />
-              <div class="desktop">Play</div></a
-            >
-          </li>
-          <li>
-            <a href="./score.html"
-              ><img src="assets/star.png" class="icons mobile" />
-              <div class="desktop">Score</div></a
-            >
-          </li>
-          <li>
-            <a href="./about.html"
-              ><img src="assets/person.png" class="icons mobile" />
-              <div class="desktop">About Us</div></a
-            >
-          </li>
-        </ul>
-      </nav>
-    </footer>
   </body>
 </html>
