@@ -164,6 +164,14 @@ input::placeholder {
 /*  Resolutin Desktop */
 
 @media screen and (min-width: 768px) {
+  .desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+
   body {
     display: flex;
     flex-direction: column-reverse;
