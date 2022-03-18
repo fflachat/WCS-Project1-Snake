@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Viga&display=swap');
+
+:root {
+  --bgColor: #4da167;
+  --secondColor: #3bc14a;
+  --thridColor: #ffb400;
+  --principalFont: Viga;
+  --secondaryFont: Roboto;
+}
+
+/* --------------NAVIGATION BAR------------ */
+
+nav {
+  background-color: var(--thridColor);
+  height: 8vh;
+  width: 90%;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gridNav {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons {
+  width: 30px;
+  height: 30px;
+}
+
+#iconPlay {
+  width: 50px;
+  height: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* General */
+html {
+  font-family: var(--principalFont);
+  background-color: var(--bgColor);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+header {
+  width: 100%;
+  height: 10px;
+}
+
+footer {
+  background-color: var(--thridColor);
+  height: 8vh;
+  width: 95%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 50px;
+  height: 30px;
+}
+
+/*-------------GAME PAGE------------------ */
+
+/* Display score */
+.score {
+  font-family: var(--principalFont);
+  font-size: 0.6rem;
+  color: var(--thridColor);
+  display: flex;
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  justify-content: flex -start;
+  align-items: baseline;
+}
+
+/* Display game */
+#gameBoard {
+  width: 80%;
+  max-height: 50vh;
+  min-height: 45vh;
+  border-radius: 20px;
+  background-color: var(--secondColor);
+  margin-bottom: 50px;
+  box-shadow: 0px 4px 20px 0px #00000080 inset;
+}
+
+/* Style for the gamepad */
+.gamepadBtn {
+  display: grid;
+  width: 150px;
+  height: 150px;
+  background-image: url(assets/GamePad.png);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.directionBtn {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+#up {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#down {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+#left {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+#right {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* --------GAME OVER PAGE -----------*/
+
+/* Display game */
+#gameOver {
+  font-size: 1.5rem;
+  color: var(--thridColor);
+  text-shadow: 0px 4px 4px #c43408;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-height: 50vh;
+  min-height: 45vh;
+  border-radius: 20px;
+  background-color: var(--secondColor);
+  margin-bottom: 50px;
+  box-shadow: 0px 4px 20px 0px #00000080 inset;
+}
+
+.scoreOver {
+  font-size: 1rem;
+}
+
+/*Name for the score board */
+
+.gamerName {
+  text-align: center;
+}
+
+.gamerName label {
+  font-size: 1.5rem;
+  color: var(--thridColor);
+  text-align: center;
+}
+
+#nameInput {
+  background: #3bc14a;
+  box-shadow: 0px 4px 20px 0px #00000080 inset;
+  border-radius: 20px 0px 0px 20px;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  font-family: var(--principalFont);
+}
+
+#nameInputBtn {
+  width: 60px;
+  height: 45px;
+  background: #ffb400;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 20px 20px 0px;
+  cursor: pointer;
+}
+
+.inputGamer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --------Desktop version / Adaption -----------*/
+
+.desktop {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  nav {
+    order: -1;
+  }
+} ;

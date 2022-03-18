@@ -8,26 +8,24 @@
     <title>Game</title>
   </head>
   <body>
-    <header class="desktop"></header>
+    <header></header>
 
-    <div class="score">
-      <h1>Score :</h1>
-      <h2>-X Pts</h2>
+    <div id="gameOver">
+      <h1>GAME OVER</h1>
+      <div class="scoreOver">
+        <h2>-X Pts</h2>
+      </div>
     </div>
-    <canvas id="gameBoard"> </canvas>
-    <div id="display"></div>
 
-    <div class="controleInfo">
-      <div class="gamepadBtn mobile">
-        <button class="directionBtn" id="up"></button>
-        <button class="directionBtn" id="down"></button>
-        <button class="directionBtn" id="left"></button>
-        <button class="directionBtn" id="right"></button>
-      </div>
+    <div class="gamerName">
+      <form action="">
+        <label for="nameInput"> Your Name :</label>
 
-      <div class="desktop">
-        <p>Play with the keyboard arrow keys</p>
-      </div>
+        <div class="inputGamer">
+          <input id="nameInput" type="text" />
+          <button id="nameInputBtn"></button>
+        </div>
+      </form>
     </div>
 
     <nav>
