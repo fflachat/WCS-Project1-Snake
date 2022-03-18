@@ -5,53 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styleSettings.css" />
   </head>
   <body>
     <main>
-      <h1>Settings</h1>
-      <section class="speed">
-        <h2>Speed</h2>
-        <div class="slider"></div>
-      </section>
-      <section>
-        <h3>Walls :</h3>
-        <label class="switch">
-          <input type="checkbox" />
-          <span class="slider round"></span>
-        </label>
-      </section>
-      <section>
-        <h3>Nightmode :</h3>
-        <label class="switch">
-          <input type="checkbox" />
-          <span class="slider round"></span>
-        </label>
-      </section>
-      <section class="sound">
-        <h2>Sound</h2>
-        <div class="slider"></div>
-      </section>
+      <div class="titre"><h1>Settings</h1></div>
+      <div class="settings">
+        <section class="speed">
+          <div class="speedSoundTitre"><h2>Speed :</h2></div>
+          <div class="reglages">
+            <div class="legende">easy</div>
+            <div class="sliders">
+              <input type="checkbox" name="sliderspd" id="sliderspd" />
+              <label for="sliderspd"></label>
+            </div>
+            <div class="legende">hard</div>
+          </div>
+        </section>
+        <section class="walls">
+          <div class="wallNightmodeTitre"><h3>Walls :</h3></div>
+          <div class="switchbox">
+            <input type="checkbox" name="switchw" id="switchw" />
+            <label for="switchw"></label>
+          </div>
+        </section>
+        <section class="nightmode">
+          <div class="wallNightmodeTitre"><h3>Nightmode :</h3></div>
+          <div class="switchbox">
+            <input type="checkbox" name="switchwnm" id="switchwnm" />
+            <label for="switchwnm"></label>
+          </div>
+        </section>
+        <section class="sound">
+          <div class="speedSoundTitre"><h2>Sound :</h2></div>
+          <div class="reglages">
+            <div class="sliders">
+              <input type="range" id="volume-slider" max="100" value="100" />
+            </div>
+            <output id="volume-output">100</output>
+          </div>
+        </section>
+      </div>
     </main>
 
     <nav>
-      <ul class="grid">
+      <ul class="gridNav">
         <li>
-          <a href="#"><img src="assets/home.png" class="icons"/></a>
+          <a href="./index.html"
+            ><img src="assets/home.png" class="icons mobile" />
+            <div class="desktop">Home</div></a
+          >
         </li>
         <li>
-          <a href="#"><img src="assets/setting-outlined.png" class="icons"/></a>
+          <a href="./setting.html"
+            ><img src="assets/setting-outlined.png" class="icons mobile" />
+            <div class="desktop">Setting</div></a
+          >
         </li>
         <li>
-          <a href="#"><img src="assets/play-circle-outlined.png" class="icons"/></a>
+          <a href="./game.html"
+            ><img
+              src="assets/play-circle-outlined.png"
+              class="icons mobile"
+              id="iconPlay"
+            />
+            <div class="desktop">Play</div></a
+          >
         </li>
         <li>
-          <a href="#"><img src="assets/star.png" class="icons"/></a>
+          <a href="./score.html"
+            ><img src="assets/star.png" class="icons mobile" />
+            <div class="desktop">Score</div></a
+          >
         </li>
         <li>
-          <a href="#"><img src="assets/person.png" class="icons"/></a>
+          <a href="./aboutus.html"
+            ><img src="assets/person.png" class="icons mobile" />
+            <div class="desktop">About Us</div></a
+          >
         </li>
       </ul>
     </nav>
+    <footer class="desktop"></footer>
   </body>
 </html>
