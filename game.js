@@ -200,7 +200,7 @@ downBtn.addEventListener('click', () => {
 });
 
 leftBtn.addEventListener('click', () => {
-  display.innerHTML = 'LEFT';
+  window.location.href = './game_over.html';
 });
 
 rightBtn.addEventListener('click', () => {
