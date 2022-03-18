@@ -22,8 +22,6 @@ const snake = [
   { x: 200, y: 200 },
   { x: 190, y: 200 },
   { x: 180, y: 200 },
-  { x: 170, y: 200 },
-  { x: 160, y: 200 },
 ];
 
 // set the score
@@ -55,8 +53,8 @@ function clearBoard() {
 
 // draw the food on the canvas
 function drawFood() {
-  gameBoardCtx.fillStyle = 'lightgreen';
-  gameBoardCtx.strokestyle = 'darkgreen';
+  gameBoardCtx.fillStyle = 'yellow';
+  gameBoardCtx.strokestyle = 'black';
   gameBoardCtx.fillRect(foodX, foodY, 10, 10);
   gameBoardCtx.strokeRect(foodX, foodY, 10, 10);
   console.log('drawFood');
@@ -84,6 +82,8 @@ function drawSnake() {
 }
 
 function hasGameEnded() {
+  console.log('has Game Ended running');
+  console.log(snake.length);
   for (let i = 4; i < snake.length; i++) {
     if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
   }
@@ -120,7 +120,6 @@ function changeDir(event) {
   const DOWN_KEY = 40;
 
   // Prevent the snake from reversing
-
   if (changingDir) return;
   changingDir = true;
   const keyPressed = event.keyCode;
@@ -170,6 +169,7 @@ function moveSnake() {
 // main function called repeatedly to keep the game running
 function main() {
   console.log('main is running');
+
   if (hasGameEnded()) return;
 
   changingDir = false;
@@ -178,6 +178,7 @@ function main() {
     drawFood();
     moveSnake();
     drawSnake();
+    console.log(hasGameEnded());
     // Repeat
     main();
   }, 100);
