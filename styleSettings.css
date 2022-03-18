@@ -31,8 +31,8 @@ main {
 
 nav {
   background-color: var(--jaune);
-  height: 8vh;
-  margin: 0.2rem;
+  height: 10vh;
+  margin: 0.8rem;
   border-radius: 10px;
   box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.25);
 }

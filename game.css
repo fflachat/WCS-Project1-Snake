@@ -9,18 +9,18 @@
   --secondaryFont: Roboto;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
 /* --------------NAVIGATION BAR------------ */
-
 nav {
   background-color: var(--thridColor);
-  height: 8vh;
-  width: 90%;
-  margin-top: 30px;
+  width: 95%;
+  height: 10vh;
+  margin: 0.8rem;
   border-radius: 10px;
   box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .gridNav {
@@ -36,28 +36,20 @@ li {
   justify-content: center;
   align-items: center;
 }
-
 .icons {
   width: 30px;
   height: 30px;
 }
-
 #iconPlay {
   width: 50px;
   height: 50px;
 }
-
 a {
   text-decoration: none;
   color: black;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-}
-
-/* General */
+/* ----------------General ----------------*/
 html {
   font-family: var(--principalFont);
   background-color: var(--bgColor);
@@ -76,15 +68,16 @@ header {
   height: 10px;
 }
 
+/*--------------------- Footer ------------------------*/
+
 footer {
   background-color: var(--thridColor);
-  height: 8vh;
   width: 95%;
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding-top: 50px;
-  height: 30px;
+  height: 50px;
+  box-shadow: -5px -5px 4px rgba(0, 0, 0, 0.25);
 }
 
 /*-------------GAME PAGE------------------ */
