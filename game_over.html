@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="game.css" />
+    <title>Game</title>
+  </head>
+  <body>
+    <header></header>
+
+    <div id="gameOver">
+      <h1>GAME OVER</h1>
+      <div class="scoreOver">
+        <h2>-X Pts</h2>
+      </div>
+    </div>
+
+    <div class="gamerName">
+      <form action="">
+        <label for="nameInput"> Your Name :</label>
+
+        <div class="inputGamer">
+          <input id="nameInput" type="text" />
+          <button id="nameInputBtn"></button>
+        </div>
+      </form>
+    </div>
+
+    <nav>
+      <ul class="gridNav">
+        <li>
+          <a href="./index.html"
+            ><img src="assets/home.png" class="icons mobile" />
+            <div class="desktop">Home</div></a
+          >
+        </li>
+        <li>
+          <a href="./setting.html"
+            ><img src="assets/setting-outlined.png" class="icons mobile" />
+            <div class="desktop">Setting</div></a
+          >
+        </li>
+        <li>
+          <a href="./game.html"
+            ><img
+              src="assets/play-circle-outlined.png"
+              class="icons mobile"
+              id="iconPlay"
+            />
+            <div class="desktop">Play</div></a
+          >
+        </li>
+        <li>
+          <a href="./score.html"
+            ><img src="assets/star.png" class="icons mobile" />
+            <div class="desktop">Score</div></a
+          >
+        </li>
+        <li>
+          <a href="./aboutus.html"
+            ><img src="assets/person.png" class="icons mobile" />
+            <div class="desktop">About Us</div></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <footer class="desktop"></footer>
+
+    <script src="game.js"></script>
+  </body>
+</html>
