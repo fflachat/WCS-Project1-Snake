@@ -144,6 +144,24 @@ th {
     nav {
       order: -1;
     }
-  } 
+   .Podium{
+      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      align-items: flex-end;
+    }
+    h1 {
+      display: flex;
+      justify-content: center;
+    }
+    table {
+     width: 1300px;
+     margin: 75px;
+     display: flex;
+     justify-content: center;
+    }}
+
+  
 
   
