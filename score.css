@@ -16,10 +16,6 @@
     margin: 0;
   }
   
-  
-  
-  
-  
   /* NAVIGATION BAR */
   
  nav {
@@ -150,13 +146,4 @@ th {
     }
   } 
 
-  footer {
-    background-color: var(--thridColor);
-    height: 8vh;
-    width: 95%;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding-top: 50px;
-    height: 30px;
-  }
+  
