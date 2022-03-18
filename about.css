@@ -41,7 +41,7 @@ form {
   margin-bottom: 10px !important;
 }
 
-.grid {
+.gridNav {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
@@ -61,6 +61,14 @@ li {
 .icons {
   width: 30px;
   height: 30px;
+}
+#iconPlay {
+  width: 50px;
+  height: 50px;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 
 /*  Corsps de la page */
@@ -180,11 +188,6 @@ input::placeholder {
     box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.25);
   }
 
-  body {
-    display: flex;
-    flex-direction: column-reverse;
-    background-color: var(--bgcolor);
-  }
   .about_us {
     display: flex;
     align-items: center;
