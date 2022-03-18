@@ -8,39 +8,37 @@
     <link rel="stylesheet" href="about.css" />
   </head>
   <body>
-    <main>
-      <section class="about_us">
-        <div class="presentation">
-          <h2>About-Us</h2>
+    <div class="about_us">
+      <div class="presentation">
+        <h2>About-Us</h2>
 
-          <img src="assets/snake.jpg" alt="snake_game" />
-          <p>
-            Vous aimez les serpents et êtes fans des jeux en ligne ? Découvrez
-            notre nouveau Snake game et tenter de faire manger le maximium de
-            pommes à votre serpent, tout en évitant de toucher les bords.
-          </p>
+        <img src="assets/snake.jpg" alt="snake_game" />
+        <p>
+          Vous aimez les serpents et êtes fans des jeux en ligne ? Découvrez
+          notre nouveau Snake game et tenter de faire manger le maximium de
+          pommes à votre serpent, tout en évitant de toucher les bords.
+        </p>
+      </div>
+      <form class="contact_us">
+        <h2>Contact Us</h2>
+
+        <div class="input">
+          <input type="text" id="input" placeholder="your name here" />
         </div>
-        <form class="contact_us">
-          <h2>Contact Us</h2>
-
-          <div class="input">
-            <input type="text" id="input" placeholder="your name here" />
-          </div>
-          <div class="message">
-            <textarea
-              name=""
-              id="message"
-              cols="20"
-              rows="8"
-              placeholder="your message here"
-            ></textarea>
-          </div>
-          <div class="button">
-            <button type="submit" id="send">Send</button>
-          </div>
-        </form>
-      </section>
-    </main>
+        <div class="message">
+          <textarea
+            name=""
+            id="message"
+            cols="20"
+            rows="8"
+            placeholder="your message here"
+          ></textarea>
+        </div>
+        <div class="button">
+          <button type="submit" id="send">Send</button>
+        </div>
+      </form>
+    </div>
 
     <nav>
       <ul class="grid">
@@ -80,7 +78,7 @@
         </li>
       </ul>
     </nav>
-    <footer>
+    <footer class="desktop">
       <p>&#169; Super 5 Snake</p>
     </footer>
   </body>

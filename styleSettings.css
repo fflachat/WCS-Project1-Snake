@@ -75,12 +75,17 @@ a {
 
 footer {
   background-color: var(--jaune);
-  height: 30px;
   width: 95%;
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 50px;
+  box-shadow: -5px -5px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
+}
+
+footer p {
+  padding: 10px;
 }
 
 /* TITRE SETTINGS */
