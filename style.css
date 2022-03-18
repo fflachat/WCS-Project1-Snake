@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Viga&display=swap');
+
+:root {
+  --bgColor: #4da167;
+  --secondColor: #3bc14a;
+  --thridColor: #ffb400;
+  --principalFont: Viga;
+  --secondaryFont: Roboto;
+}
+
+* {
+  font-family: Viga;
+}
+
 body {
-  background-color: darkgreen;
+  background-color: #4da167;
 }
 
 #play {
@@ -10,10 +25,8 @@ body {
 
 h1 {
   color: goldenrod;
-  font-family: "Courier New", Courier, monospace;
   font-size: 10vw;
-  -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: brown;
+  text-shadow: 0px 4px 4px #c43408;
 }
 #titre {
   display: flex;
@@ -58,6 +71,10 @@ nav {
 a {
   text-decoration: none;
   color: black;
+}
+
+.desktop {
+  display: none;
 }
 
 @media screen and (min-width: 600px) {
