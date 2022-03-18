@@ -16,6 +16,10 @@
     margin: 0;
   }
   
+  
+  
+  
+  
   /* NAVIGATION BAR */
   
  nav {
@@ -120,6 +124,7 @@ display: flex;
 justify-content: center;
 margin : 20px;
 background-color:#3bc14a; 
+border-radius: 5px;
 }
 td {
 
@@ -129,3 +134,29 @@ td {
 th {
     color: white;
 }
+
+.desktop {
+    display: none;
+  }
+  @media screen and (min-width: 600px) {
+    .mobile {
+      display: none;
+    }
+    .desktop {
+      display: block;
+    }
+    nav {
+      order: -1;
+    }
+  } 
+
+  footer {
+    background-color: var(--thridColor);
+    height: 8vh;
+    width: 95%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 50px;
+    height: 30px;
+  }
