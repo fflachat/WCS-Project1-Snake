@@ -3,13 +3,15 @@
 
 :root {
   --bgcolor: #4da167;
-  --vertclair: #3bc14a;
-  --jaune: #ffb400;
-  --orange: #c43408;
-  --nightbleu: #272ab0;
-  --nightbleuclair: #57acdc;
-  --nightbleuneon: #57dcbe;
-  --nightrose: #e91e63;
+  --secondColor: #3bc14a;
+  --thridColor: #ffb400;
+  --fourthColor: #c43408;
+
+  /*
+  --bgcolor: #1a1a1a;
+  --secondColor: #57acdc;
+  --thridColor: #57dcbe;
+  --fourthColor: #e91e63; */
 }
 
 * {
@@ -31,7 +33,7 @@ main {
 /* NAVIGATION BAR */
 
 nav {
-  background-color: var(--jaune);
+  background-color: var(--thridColor);
   height: 10vh;
   margin: 0.8rem;
   width: 95%;
@@ -74,7 +76,7 @@ a {
 /* FOOTER */
 
 footer {
-  background-color: var(--jaune);
+  background-color: var(--thridColor);
   width: 95%;
   position: absolute;
   bottom: 0;
@@ -98,10 +100,10 @@ h1 {
   font-family: 'Viga', sans-serif;
   font-weight: 400;
   font-size: 3rem;
-  margin-top: 30px;
+  padding-top: 30px;
   margin-bottom: 10px;
-  color: var(--jaune);
-  text-shadow: 0px 4px 4px var(--orange);
+  color: var(--thridColor);
+  text-shadow: 0px 4px 4px var(--fourthColor);
   text-align: center;
 }
 
@@ -111,7 +113,7 @@ h1 {
   height: 80%;
   width: 85%;
   margin: 0 auto;
-  background: var(--vertclair);
+  background: var(--secondColor);
   box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   display: grid;
@@ -193,7 +195,7 @@ h3 {
   width: 20px;
   height: 55px;
   background-color: var(--bgcolor);
-  border: 5px solid var(--jaune);
+  border: 5px solid var(--thridColor);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   position: absolute;
   top: -15px;
@@ -352,10 +354,10 @@ h3 {
   content: '';
   width: 45px;
   height: 45px;
-  background-color: var(--vertclair);
+  background-color: var(--secondColor);
   position: absolute;
   border-radius: 70px;
-  border: 5px solid var(--jaune);
+  border: 5px solid var(--thridColor);
   left: 5px;
   transition: 0.8s ease;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -367,7 +369,7 @@ h3 {
 }
 
 .switchbox input:checked + label {
-  background-color: var(--jaune);
+  background-color: var(--thridColor);
 }
 
 @media screen and (min-width: 768px) {

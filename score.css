@@ -3,13 +3,15 @@
 
 :root {
   --bgcolor: #4da167;
-  --vertclair: #3bc14a;
-  --jaune: #ffb400;
-  --orange: #c43408;
-  --nightbleu: #272ab0;
-  --nightbleuclair: #57acdc;
-  --nightbleuneon: #57dcbe;
-  --nightrose: #e91e63;
+  --secondColor: #3bc14a;
+  --thridColor: #ffb400;
+  --fourthColor: #c43408;
+
+  /*
+  --bgcolor: #1a1a1a;
+  --secondColor: #57acdc;
+  --thridColor: #57dcbe;
+  --fourthColor: #e91e63; */
 }
 
 * {
@@ -31,7 +33,7 @@ main {
 /* NAVIGATION BAR */
 
 nav {
-  background-color: var(--jaune);
+  background-color: var(--thridColor);
   height: 10vh;
   width: 95%;
   margin: 0 0.6rem;
@@ -78,7 +80,7 @@ a {
 /* FOOTER */
 
 footer {
-  background-color: var(--jaune);
+  background-color: var(--thridColor);
   width: 95%;
   position: absolute;
   bottom: 0;
@@ -93,8 +95,8 @@ footer p {
 }
 
 h1 {
-  color: var(--jaune);
-  text-shadow: 0px 4px 4px var(--orange);
+  color: var(--thridColor);
+  text-shadow: 0px 4px 4px var(--fourthColor);
   font-weight: 400;
   font-size: 3rem;
   padding-top: 40px;
@@ -104,7 +106,7 @@ h1 {
 /* PODIUM */
 
 h2 {
-  color: var(--jaune);
+  color: var(--thridColor);
   font-weight: 400;
 }
 
@@ -114,7 +116,7 @@ h3 {
   font-weight: 400;
 }
 .firstName {
-  color: var(--jaune);
+  color: var(--thridColor);
   text-align: center;
   width: 90vw;
   height: 10vh;
@@ -142,7 +144,7 @@ h3 {
 .secondPlace {
   grid-column: 1 / 2;
   grid-row: 2 / 4;
-  background-color: var(--jaune);
+  background-color: var(--thridColor);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
 }
@@ -150,7 +152,7 @@ h3 {
 .firstPlace {
   grid-column: 2 / 3;
   grid-row: 1 / 4;
-  background-color: var(--jaune);
+  background-color: var(--thridColor);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
 }
@@ -163,7 +165,7 @@ h3 {
 .thirdPlace {
   grid-column: 3 / 4;
   grid-row: 3 / 4;
-  background-color: var(--jaune);
+  background-color: var(--thridColor);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
 }
@@ -171,14 +173,14 @@ h3 {
 .secondPlace > p,
 .firstPlace > p {
   padding-top: 20px;
-  color: var(--orange);
+  color: var(--fourthColor);
   font-size: 30pt;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .thirdPlace > p {
   padding-top: 5px;
-  color: var(--orange);
+  color: var(--fourthColor);
   font-size: 30pt;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -193,7 +195,7 @@ h3 {
   margin-top: 20px;
   padding: 15px 0px;
   width: clamp(100px, 80vw, 500px);
-  background-color: var(--vertclair);
+  background-color: var(--secondColor);
   box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
 }
