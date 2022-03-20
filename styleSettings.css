@@ -226,40 +226,40 @@ h3 {
   height: 24px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #50555c;
-  background: #4da167;
+  background: var(--bgcolor);
   border-radius: 14px;
   border: 0px solid #000000;
 }
 .sliders input[type='range']::-webkit-slider-thumb {
   box-shadow: 0px 0px 0px #000000;
-  border: 4px solid #ffb400;
+  border: 4px solid var(--thridColor);
   height: 50px;
   width: 20px;
   border-radius: 12px;
-  background: #3bc14a;
+  background: var(--secondColor);
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -10px;
 }
 .sliders input[type='range']:focus::-webkit-slider-runnable-track {
-  background: #4da167;
+  background: var(--bgcolor);
 }
 .sliders input[type='range']::-moz-range-track {
   width: 100%;
   height: 24px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #50555c;
-  background: #4da167;
+  background: var(--bgcolor);
   border-radius: 14px;
   border: 0px solid #000000;
 }
 .sliders input[type='range']::-moz-range-thumb {
   box-shadow: 0px 0px 0px #000000;
-  border: 4px solid #ffb400;
+  border: 4px solid var(--thridColor);
   height: 50px;
   width: 20px;
   border-radius: 12px;
-  background: #3bc14a;
+  background: var(--secondColor);
   cursor: pointer;
 }
 .sliders input[type='range']::-ms-track {
@@ -271,13 +271,13 @@ h3 {
   color: transparent;
 }
 .sliders input[type='range']::-ms-fill-lower {
-  background: #4da167;
+  background: var(--bgcolor);
   border: 0px solid #000000;
   border-radius: 28px;
   box-shadow: 1px 1px 1px #50555c;
 }
 .sliders input[type='range']::-ms-fill-upper {
-  background: #4da167;
+  background: var(--bgcolor);
   border: 0px solid #000000;
   border-radius: 28px;
   box-shadow: 1px 1px 1px #50555c;
@@ -285,18 +285,18 @@ h3 {
 .sliders input[type='range']::-ms-thumb {
   margin-top: 1px;
   box-shadow: 0px 0px 0px #000000;
-  border: 4px solid #ffb400;
+  border: 4px solid var(--thridColor);
   height: 50px;
   width: 20px;
   border-radius: 12px;
-  background: #3bc14a;
+  background: var(--secondColor);
   cursor: pointer;
 }
 .sliders input[type='range']:focus::-ms-fill-lower {
-  background: #4da167;
+  background: var(--bgcolor);
 }
 .sliders input[type='range']:focus::-ms-fill-upper {
-  background: #4da167;
+  background: var(--bgcolor);
 }
 
 #volume-output {

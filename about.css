@@ -3,13 +3,15 @@
 
 :root {
   --bgcolor: #4da167;
-  --vertclair: #3bc14a;
-  --jaune: #ffb400;
-  --orange: #c43408;
-  --nightbleu: #272ab0;
-  --nightbleuclair: #57acdc;
-  --nightbleuneon: #57dcbe;
-  --nightrose: #e91e63;
+  --secondColor: #3bc14a;
+  --thridColor: #ffb400;
+  --fourthColor: #c43408;
+
+  /*
+  --bgcolor: #1a1a1a;
+  --secondColor: #57acdc;
+  --thridColor: #57dcbe;
+  --fourthColor: #e91e63; */
 }
 
 * {
@@ -27,7 +29,7 @@ body {
 /* NAVIGATION BAR */
 
 nav {
-  background-color: var(--jaune);
+  background-color: var(--thridColor);
   height: 10vh;
   margin: 0.8rem;
   position: absolute;
@@ -79,8 +81,8 @@ a {
 }
 
 .about_us h2 {
-  background-color: #4da167;
-  color: #ffb400;
+  background-color: var(--bgcolor);
+  color: var(--thridColor);
   text-align: center;
   padding-bottom: 17px;
   font-family: Viga;
@@ -89,7 +91,7 @@ a {
   font-weight: 300;
   font-size: 43px;
   line-height: 65px;
-  text-shadow: 0px 4px 4px #c43408;
+  text-shadow: 0px 4px 4px var(--fourthColor);
 }
 
 .presentation img {
@@ -104,8 +106,8 @@ a {
 }
 
 .contact_title h2 {
-  background-color: #4da167;
-  color: #ffb400;
+  background-color: var(--bgcolor);
+  color: var(--thridColor);
   padding-top: 3%;
   text-align: center;
   align-items: center;
@@ -113,7 +115,7 @@ a {
   font-weight: 300;
   font-size: 43px;
   line-height: 65px;
-  text-shadow: 0px 4px 4px #c43408 !important;
+  text-shadow: 0px 4px 4px var(--fourthColor) !important;
 }
 
 /* Contact */
@@ -124,8 +126,8 @@ a {
   font-size: 15px;
   align-items: center;
   height: 32px;
-  color: #c43408;
-  background: #ffb400;
+  color: var(--fourthColor);
+  background: var(--thridColor);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   border-style: none;
@@ -142,7 +144,7 @@ a {
   margin-top: 5px;
   box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
-  background: #3bc14a;
+  background: var(--secondColor);
   border-style: none;
   text-align: center;
 }
@@ -152,7 +154,7 @@ a {
   width: 90%;
   margin-top: 5px;
   border-radius: 20px;
-  background: #3bc14a;
+  background: var(--secondColor);
   box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
 }
@@ -210,7 +212,7 @@ input::placeholder {
     height: 30vh;
   }
   footer {
-    background-color: var(--jaune);
+    background-color: var(--thridColor);
     width: 95%;
     position: absolute;
     bottom: 0;
