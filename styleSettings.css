@@ -300,10 +300,28 @@ h3 {
 }
 
 #volume-output {
-  color: white;
+  color: rgb(219, 219, 219);
   font-size: smaller;
   font-style: italic;
   padding: 5px 0px 0px 9px;
+}
+
+/* PLAY BUTTON */
+
+button {
+  margin-right: 10px;
+  background-color: var(--secondColor);
+  border: none;
+  color: rgb(219, 219, 219);
+  cursor: pointer;
+}
+
+button:hover {
+  color: var(--thridColor);
+}
+
+.buttonMute {
+  color: var(--thridColor);
 }
 
 /*WALL & NIGHTMODE SETINGS*/
