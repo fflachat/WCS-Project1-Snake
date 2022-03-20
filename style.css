@@ -10,6 +10,13 @@
   --secondaryFont: Roboto;
 }
 
+.dark {
+  --bgcolor: #1a1a1a;
+  --secondColor: #57acdc;
+  --thridColor: #57dcbe;
+  --fourthColor: #e91e63;
+}
+
 * {
   font-family: Viga;
   margin: 0;

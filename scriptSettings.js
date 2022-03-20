@@ -2,6 +2,7 @@ const playButton = document.querySelector('button');
 const audio = document.querySelector('audio');
 const volumeSlider = document.getElementById('volume-slider');
 const volumeOutput = document.getElementById('volume-output');
+const nightMode = document.getElementById('switchwnm');
 
 // sound setting
 function playText() {
@@ -25,3 +26,7 @@ volumeSlider.addEventListener('input', (e) => {
 });
 
 // night mode setting
+
+nightMode.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+});
