@@ -116,8 +116,8 @@ footer p {
   max-height: 50vh;
   min-height: 45vh;
   border-radius: 20px;
-  background-color: var(--secondColor);
   margin-bottom: 50px;
+  background-color: var(--secondColor);
   box-shadow: 0px 4px 20px 0px #00000080 inset;
 }
 

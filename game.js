@@ -5,23 +5,28 @@ const downBtn = document.querySelector('#down');
 const leftBtn = document.querySelector('#left');
 const rightBtn = document.querySelector('#right');
 
-const display = document.querySelector('#display');
-
 const gameBoard = document.querySelector('#gameBoard');
+
+const bgColor = '#4da167';
+const secondColor = '#3bc14a';
+const thridColor = '#ffb400';
+const fourthColor = '#c43408';
+
+let wallsActivated = true;
 
 // Code à comprendre
 
 // give some colors to the snake and the game board
 const boardBorder = 'black';
-const boardBg = 'white';
-const snakeCol = 'lightblue';
-const snakeBorder = 'darkblue';
+const boardBg = secondColor;
+const snakeCol = thridColor;
+const snakeBorder = 'black';
 
 // Define the initial snake
 const snake = [
-  { x: 200, y: 200 },
-  { x: 190, y: 200 },
-  { x: 180, y: 200 },
+  { x: 20, y: 20 },
+  { x: 19, y: 20 },
+  { x: 18, y: 20 },
 ];
 
 // set the score
@@ -42,22 +47,25 @@ const gameBoardCtx = gameBoard.getContext('2d');
 function clearBoard() {
   //  Select the colour to fill the drawing
   gameBoardCtx.fillStyle = boardBg;
-  //  Select the colour for the border of the canvas
-  gameBoardCtx.strokestyle = boardBorder;
   // Draw a "filled" rectangle to cover the entire canvas
   gameBoardCtx.fillRect(0, 0, gameBoard.width, gameBoard.height);
   // Draw a "border" around the entire canvas
   gameBoardCtx.strokeRect(0, 0, gameBoard.width, gameBoard.height);
-  console.log('clearBoard');
 }
 
 // draw the food on the canvas
+function drawFoodCircle() {
+  gameBoardCtx.beginPath();
+  gameBoardCtx.fillStyle = fourthColor;
+  gameBoardCtx.arc(foodY, foodX, 5, 0, 2 * Math.PI);
+  gameBoardCtx.fill();
+}
+
 function drawFood() {
-  gameBoardCtx.fillStyle = 'yellow';
-  gameBoardCtx.strokestyle = 'black';
+  gameBoardCtx.fillStyle = 'lightgreen';
+  gameBoardCtx.strokestyle = 'darkgreen';
   gameBoardCtx.fillRect(foodX, foodY, 10, 10);
   gameBoardCtx.strokeRect(foodX, foodY, 10, 10);
-  console.log('drawFood');
 }
 
 // Draw one snake part
@@ -71,7 +79,6 @@ function drawSnakePart(snakePart) {
   gameBoardCtx.fillRect(snakePart.x, snakePart.y, 10, 10);
   // Draw a border around the snake part
   gameBoardCtx.strokeRect(snakePart.x, snakePart.y, 10, 10);
-  console.log('drawSnakePart');
 }
 
 // Draw the snake on the canvas
@@ -87,11 +94,15 @@ function hasGameEnded() {
   for (let i = 4; i < snake.length; i++) {
     if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
   }
-  const hitLeftWall = snake[0].x < 0;
-  const hitRightWall = snake[0].x > gameBoard.width - 10;
-  const hitToptWall = snake[0].y < 0;
-  const hitBottomWall = snake[0].y > gameBoard.height - 10;
-  return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall;
+
+  if (wallsActivated) {
+    const hitLeftWall = snake[0].x < 0;
+    const hitRightWall = snake[0].x > gameBoard.width - 10;
+    const hitToptWall = snake[0].y < 0;
+    const hitBottomWall = snake[0].y > gameBoard.height - 10;
+    return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall;
+  }
+  return false;
 }
 
 function randomFood(min, max) {
@@ -143,7 +154,34 @@ function changeDir(event) {
     dx = 0;
     dy = 10;
   }
-  console.log('changeDir');
+}
+
+// Function for mobile version with gamepad control
+function changeDirGamePad(event) {
+  if (changingDir) return;
+  changingDir = true;
+
+  const dir = event.target.value;
+  const goingUp = dy === -10;
+  const goingDown = dy === 10;
+  const goingRight = dx === 10;
+  const goingLeft = dx === -10;
+  if (dir === 'LEFT' && !goingRight) {
+    dx = 10;
+    dy = 0;
+  }
+  if (dir === 'UP' && !goingDown) {
+    dx = 0;
+    dy = -10;
+  }
+  if (dir === 'RIGHT' && !goingLeft) {
+    dx = -10;
+    dy = 0;
+  }
+  if (dir === 'DOWN' && !goingUp) {
+    dx = 0;
+    dy = 10;
+  }
 }
 
 function moveSnake() {
@@ -163,14 +201,14 @@ function moveSnake() {
     // Remove the last part of snake body
     snake.pop();
   }
-  console.log('moveSnake');
 }
 
 // main function called repeatedly to keep the game running
 function main() {
-  console.log('main is running');
-
-  if (hasGameEnded()) return;
+  if (hasGameEnded()) {
+    window.location.href = './game_over.html';
+    window.localStorage.setItem('Score', score);
+  }
 
   changingDir = false;
   setTimeout(() => {
@@ -178,7 +216,6 @@ function main() {
     drawFood();
     moveSnake();
     drawSnake();
-    console.log(hasGameEnded());
     // Repeat
     main();
   }, 100);
@@ -187,22 +224,14 @@ function main() {
 // Start game
 main();
 genFood();
+drawSnake();
 
 document.addEventListener('keydown', changeDir);
 
-upBtn.addEventListener('click', () => {
-  display.innerHTML = 'UP';
-  drawSnake();
-});
+upBtn.addEventListener('click', changeDirGamePad);
 
-downBtn.addEventListener('click', () => {
-  display.innerHTML = 'DOWN';
-});
+downBtn.addEventListener('click', changeDirGamePad);
 
-leftBtn.addEventListener('click', () => {
-  window.location.href = './game_over.html';
-});
+leftBtn.addEventListener('click', changeDirGamePad);
 
-rightBtn.addEventListener('click', () => {
-  display.innerHTML = 'RIGHT';
-});
+rightBtn.addEventListener('click', changeDirGamePad);
