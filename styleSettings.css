@@ -325,6 +325,10 @@ button:hover {
   color: var(--thridColor);
 }
 
+.buttonMute:hover {
+  color: rgb(219, 219, 219);
+}
+
 /*WALL & NIGHTMODE SETINGS*/
 
 .wallNightmodeTitre {
