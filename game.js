@@ -12,12 +12,10 @@ const secondColor = '#3bc14a';
 const thridColor = '#ffb400';
 const fourthColor = '#c43408';
 
-let wallsActivated = true;
+let wallsActivated = false;
 
 let speed = 200;
 let timeBonusScore = 100;
-
-// Code à comprendre
 
 // give some colors to the snake and the game board
 const boardBorder = 'black';
@@ -95,7 +93,7 @@ function hasGameEnded() {
   for (let i = 4; i < snake.length; i++) {
     if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
   }
-
+  // End game if snake hit walls if the option is activated
   if (wallsActivated) {
     const hitLeftWall = snake[0].x < 0;
     const hitRightWall = snake[0].x > gameBoard.width - 10;
@@ -136,56 +134,31 @@ function changeDir(event) {
   // Prevent the snake from reversing
   if (changingDir) return;
   changingDir = true;
-  const keyPressed = event.keyCode;
+  const dir = event.keyCode || event.target.value;
+  console.log(dir);
   const goingUp = dy === -10;
   const goingDown = dy === 10;
   const goingRight = dx === 10;
   const goingLeft = dx === -10;
-  if (keyPressed === LEFT_KEY && !goingRight) {
+  if ((dir === LEFT_KEY || dir === 'LEFT') && !goingRight) {
     dx = -10;
     dy = 0;
   }
-  if (keyPressed === UP_KEY && !goingDown) {
+  if ((dir === UP_KEY || dir === 'UP') && !goingDown) {
     dx = 0;
     dy = -10;
   }
-  if (keyPressed === RIGHT_KEY && !goingLeft) {
+  if ((dir === RIGHT_KEY || dir === 'RIGHT') && !goingLeft) {
     dx = 10;
     dy = 0;
   }
-  if (keyPressed === DOWN_KEY && !goingUp) {
+  if ((dir === DOWN_KEY || dir === 'DOWN') && !goingUp) {
     dx = 0;
     dy = 10;
   }
 }
 
 // Function for mobile version with gamepad control
-function changeDirGamePad(event) {
-  if (changingDir) return;
-  changingDir = true;
-
-  const dir = event.target.value;
-  const goingUp = dy === -10;
-  const goingDown = dy === 10;
-  const goingRight = dx === 10;
-  const goingLeft = dx === -10;
-  if (dir === 'LEFT' && !goingRight) {
-    dx = 10;
-    dy = 0;
-  }
-  if (dir === 'UP' && !goingDown) {
-    dx = 0;
-    dy = -10;
-  }
-  if (dir === 'RIGHT' && !goingLeft) {
-    dx = -10;
-    dy = 0;
-  }
-  if (dir === 'DOWN' && !goingUp) {
-    dx = 0;
-    dy = 10;
-  }
-}
 
 // move the snake
 function moveSnake() {
@@ -193,6 +166,28 @@ function moveSnake() {
   const head = { x: snake[0].x + dx, y: snake[0].y + dy };
   // Add the new head to the beginning of snake body
   snake.unshift(head);
+
+  // Replace snake position at the opposite if walls are desactivated
+  if (!wallsActivated) {
+    const hitLeftWall = snake[0].x < 0;
+    const hitRightWall = snake[0].x > gameBoard.width - 10;
+    const hitToptWall = snake[0].y < 0;
+    const hitBottomWall = snake[0].y > gameBoard.height - 10;
+
+    if (hitLeftWall) {
+      snake[0].x = gameBoard.width - 10;
+    }
+    if (hitRightWall) {
+      snake[0].x = 0;
+    }
+    if (hitToptWall) {
+      snake[0].y = gameBoard.height - 10;
+    }
+    if (hitBottomWall) {
+      snake[0].y = 0;
+    }
+  }
+
   const hasEatenFood = snake[0].x === foodX && snake[0].y === foodY;
   if (hasEatenFood) {
     // Increase score
@@ -222,7 +217,6 @@ function countdown() {
 }
 
 // main function called repeatedly to keep the game running
-
 function main() {
   if (hasGameEnded()) {
     window.location.href = './game_over.html';
@@ -248,11 +242,7 @@ drawSnake();
 
 // Event listeners
 document.addEventListener('keydown', changeDir);
-
-upBtn.addEventListener('click', changeDirGamePad);
-
-downBtn.addEventListener('click', changeDirGamePad);
-
-leftBtn.addEventListener('click', changeDirGamePad);
-
-rightBtn.addEventListener('click', changeDirGamePad);
+upBtn.addEventListener('click', changeDir);
+downBtn.addEventListener('click', changeDir);
+leftBtn.addEventListener('click', changeDir);
+rightBtn.addEventListener('click', changeDir);

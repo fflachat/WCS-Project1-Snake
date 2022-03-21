@@ -159,12 +159,12 @@ footer p {
 }
 
 #left {
-  grid-column: 3;
+  grid-column: 1;
   grid-row: 2;
 }
 
 #right {
-  grid-column: 1;
+  grid-column: 3;
   grid-row: 2;
 }
 
