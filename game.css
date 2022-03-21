@@ -9,6 +9,13 @@
   --secondaryFont: Roboto;
 }
 
+.dark {
+  --bgcolor: #1a1a1a;
+  --secondColor: #57acdc;
+  --thridColor: #57dcbe;
+  --fourthColor: #e91e63;
+}
+
 * {
   padding: 0;
   margin: 0;

@@ -6,12 +6,13 @@
   --secondColor: #3bc14a;
   --thridColor: #ffb400;
   --fourthColor: #c43408;
+}
 
-  /*
+.dark {
   --bgcolor: #1a1a1a;
   --secondColor: #57acdc;
   --thridColor: #57dcbe;
-  --fourthColor: #e91e63; */
+  --fourthColor: #e91e63;
 }
 
 * {

@@ -6,12 +6,13 @@
   --secondColor: #3bc14a;
   --thridColor: #ffb400;
   --fourthColor: #c43408;
+}
 
-  /*
+.dark {
   --bgcolor: #1a1a1a;
   --secondColor: #57acdc;
   --thridColor: #57dcbe;
-  --fourthColor: #e91e63; */
+  --fourthColor: #e91e63;
 }
 
 * {
@@ -300,10 +301,32 @@ h3 {
 }
 
 #volume-output {
-  color: white;
+  color: rgb(219, 219, 219);
   font-size: smaller;
   font-style: italic;
   padding: 5px 0px 0px 9px;
+}
+
+/* PLAY BUTTON */
+
+button {
+  margin-right: 10px;
+  background-color: var(--secondColor);
+  border: none;
+  color: rgb(219, 219, 219);
+  cursor: pointer;
+}
+
+button:hover {
+  color: var(--thridColor);
+}
+
+.buttonMute {
+  color: var(--thridColor);
+}
+
+.buttonMute:hover {
+  color: rgb(219, 219, 219);
 }
 
 /*WALL & NIGHTMODE SETINGS*/
