@@ -1,3 +1,11 @@
+function theme() {
+  if (localStorage.getItem('darkmode') === 'activated') {
+    document.body.classList.add('dark');
+  }
+}
+
+theme();
+
 const playButton = document.querySelector('button');
 const audio = document.querySelector('audio');
 const volumeSlider = document.getElementById('volume-slider');
@@ -28,5 +36,11 @@ volumeSlider.addEventListener('input', (e) => {
 // night mode setting
 
 nightMode.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
+  if (document.body.classList.contains('dark')) {
+    document.body.classList.remove('dark');
+    localStorage.removeItem('darkmode');
+  } else {
+    document.body.classList.add('dark');
+    localStorage.setItem('darkmode', 'activated');
+  }
 });
