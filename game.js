@@ -14,6 +14,9 @@ const fourthColor = '#c43408';
 
 let wallsActivated = true;
 
+let speed = 200;
+let timeBonusScore = 100;
+
 // Code à comprendre
 
 // give some colors to the snake and the game board
@@ -85,12 +88,10 @@ function drawSnakePart(snakePart) {
 function drawSnake() {
   // Draw each part
   snake.forEach(drawSnakePart);
-  console.log('drawSnake');
 }
 
+// verify the status of the game
 function hasGameEnded() {
-  console.log('has Game Ended running');
-  console.log(snake.length);
   for (let i = 4; i < snake.length; i++) {
     if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
   }
@@ -105,10 +106,12 @@ function hasGameEnded() {
   return false;
 }
 
+// randomize the food position
 function randomFood(min, max) {
   return Math.round((Math.random() * (max - min) + min) / 10) * 10;
 }
 
+// generate food
 function genFood() {
   // Generate a random number the food x-coordinate
   foodX = randomFood(0, gameBoard.width - 10);
@@ -121,9 +124,9 @@ function genFood() {
       genFood();
     }
   });
-  console.log('genFood is running');
 }
 
+// controle for the desktop version with keyboard
 function changeDir(event) {
   const LEFT_KEY = 37;
   const RIGHT_KEY = 39;
@@ -184,6 +187,7 @@ function changeDirGamePad(event) {
   }
 }
 
+// move the snake
 function moveSnake() {
   // Create the new Snake's head
   const head = { x: snake[0].x + dx, y: snake[0].y + dy };
@@ -192,40 +196,57 @@ function moveSnake() {
   const hasEatenFood = snake[0].x === foodX && snake[0].y === foodY;
   if (hasEatenFood) {
     // Increase score
-    score += 10;
+    if (timeBonusScore < 0) timeBonusScore = 0;
+    score += 10 + timeBonusScore;
     // Display score on screen
     document.getElementById('score').innerHTML = score;
     // Generate new food location
     genFood();
+    speed -= 5; // Speed increase with the quantity of eaten food
+    timeBonusScore = 100;
   } else {
     // Remove the last part of snake body
     snake.pop();
   }
 }
 
+// display a start countdown
+const countDownDisplay = document.querySelectorAll('#countDown');
+let timeLeft = 10;
+function countdown() {
+  timeLeft--;
+  countDownDisplay.innerText = timeLeft;
+  if (timeLeft > 0) {
+    setTimeout(countdown, 1000);
+  }
+}
+
 // main function called repeatedly to keep the game running
+
 function main() {
   if (hasGameEnded()) {
     window.location.href = './game_over.html';
     window.localStorage.setItem('Score', score);
   }
-
   changingDir = false;
   setTimeout(() => {
+    timeBonusScore -= 1;
     clearBoard();
-    drawFood();
     moveSnake();
     drawSnake();
+    drawFood();
     // Repeat
     main();
-  }, 100);
+  }, speed); // En modifiant speed on joue sur la vitesse du serpent
 }
 
 // Start game
+setTimeout(countdown, 1000);
 main();
 genFood();
 drawSnake();
 
+// Event listeners
 document.addEventListener('keydown', changeDir);
 
 upBtn.addEventListener('click', changeDirGamePad);
