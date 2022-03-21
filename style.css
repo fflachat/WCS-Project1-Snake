@@ -1,28 +1,54 @@
-body {
-  background-color: darkgreen;
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Viga&display=swap');
+
+:root {
+  --bgColor: #4da167;
+  --secondColor: #3bc14a;
+  --thridColor: #ffb400;
+  --shadowcolor: #c43408;
+  --principalFont: Viga;
+  --secondaryFont: Roboto;
 }
 
-#play {
+.dark {
+  --bgcolor: #1a1a1a;
+  --secondColor: #57acdc;
+  --thridColor: #57dcbe;
+  --fourthColor: #e91e63;
+}
+
+* {
+  font-family: Viga;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bgColor);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 h1 {
-  color: goldenrod;
-  font-family: "Courier New", Courier, monospace;
+  color: var(--thridColor);
   font-size: 10vw;
-  -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: brown;
-}
-#titre {
-  display: flex;
-  justify-content: center;
+  text-shadow: 0px 4px 4px var(--shadowcolor);
+  margin: 50px;
 }
 
-#basdepage {
-  height: 100px;
-  width: 10;
+/* NAVIGATION BAR */
+
+nav {
+  background-color: var(--thridColor);
+  height: 10vh;
+  margin: 0.8rem;
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+  border-radius: 10px;
+  box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
 .gridNav {
@@ -38,19 +64,10 @@ li {
   justify-content: center;
   align-items: center;
 }
-
-nav {
-  background-color: #ffb400;
-  height: 12vh;
-  width: 100%;
-  margin-top: 22%;
-  border-radius: 10px;
-  box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.icons {
+  width: 30px;
+  height: 30px;
 }
-
 #iconPlay {
   width: 50px;
   height: 50px;
@@ -60,15 +77,46 @@ a {
   color: black;
 }
 
-@media screen and (min-width: 600px) {
+/*--------------------- Footer ------------------------*/
+
+footer {
+  background-color: var(--thridColor);
+  width: 95%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  box-shadow: -5px -5px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+footer p {
+  padding: 10px;
+}
+
+/* -----------------Display for desktop ----------------*/
+
+.desktop {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
   .mobile {
-    height: 100%;
+    display: none;
   }
 
   .desktop {
     display: block;
   }
+
   nav {
+    position: initial;
     order: -1;
+    width: 100%;
+    height: 50px;
+    box-shadow: -5px -5px 4px rgba(0, 0, 0, 0.25);
+    margin: initial;
+    border-radius: initial;
+    box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.25);
   }
 } ;

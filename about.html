@@ -4,17 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <title>Super 5 Snake</title>
+    <title>Snake_about_us</title>
+    <link rel="stylesheet" href="about.css" />
   </head>
-
   <body>
-    <div id="titre"><h1>Super 5 Snake</h1></div>
+    <div class="about_us">
+      <div class="presentation">
+        <h2>About-Us</h2>
 
-    <div id="play">
-      <a href="game.html">
-        <img src="assets/PlayButton.png" alt="" />
-      </a>
+        <img src="assets/snake.jpg" alt="snake_game" />
+        <p>
+          Vous aimez les serpents et êtes fans des jeux en ligne ? Découvrez
+          notre nouveau Snake game et tenter de faire manger le maximium de
+          pommes à votre serpent, tout en évitant de toucher les bords.
+        </p>
+      </div>
+      <form class="contact_us">
+        <h2>Contact Us</h2>
+
+        <div class="input">
+          <input type="text" id="input" placeholder="your name here" />
+        </div>
+        <div class="message">
+          <textarea
+            name=""
+            id="message"
+            cols="20"
+            rows="8"
+            placeholder="your message here"
+          ></textarea>
+        </div>
+        <div class="button">
+          <button type="submit" id="send">Send</button>
+        </div>
+      </form>
     </div>
 
     <nav>
@@ -55,9 +78,8 @@
         </li>
       </ul>
     </nav>
-
-    <footer class="desktop"><p>&#169; Super 5 Snake</p></footer>
-
-    <script src="script.js"></script>
+    <footer class="desktop">
+      <p>&#169; Super 5 Snake</p>
+    </footer>
   </body>
 </html>

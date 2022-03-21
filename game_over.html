@@ -4,17 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <title>Super 5 Snake</title>
+    <link rel="stylesheet" href="game.css" />
+    <title>Game</title>
   </head>
-
   <body>
-    <div id="titre"><h1>Super 5 Snake</h1></div>
+    <header></header>
 
-    <div id="play">
-      <a href="game.html">
-        <img src="assets/PlayButton.png" alt="" />
-      </a>
+    <div id="gameOver">
+      <h1>GAME OVER</h1>
+      <div class="scoreOver">
+        <h2><span id="score">0</span>Pts</h2>
+      </div>
+    </div>
+
+    <div class="gamerName">
+      <form action="">
+        <label for="nameInput"> Your Name :</label>
+
+        <div class="inputGamer">
+          <input id="nameInput" type="text" />
+          <button type="submit" id="nameInputBtn">&#10132;</button>
+        </div>
+      </form>
     </div>
 
     <nav>
@@ -58,6 +69,6 @@
 
     <footer class="desktop"><p>&#169; Super 5 Snake</p></footer>
 
-    <script src="script.js"></script>
+    <script src="game_over.js"></script>
   </body>
 </html>

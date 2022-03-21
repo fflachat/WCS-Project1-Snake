@@ -4,7 +4,72 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="game.css" />
     <title>Game</title>
   </head>
-  <body></body>
+  <body>
+    <header class="desktop"></header>
+
+    <div class="score">
+      <h1>Score :</h1>
+      <h2><span id="score">0</span> Pts</h2>
+    </div>
+    <canvas id="gameBoard"> </canvas>
+
+    <div class="controleInfo">
+      <div class="gamepadBtn mobile">
+        <button class="directionBtn" id="up" value="UP"></button>
+        <button class="directionBtn" id="down" value="DOWN"></button>
+        <button class="directionBtn" id="left" value="LEFT"></button>
+        <button class="directionBtn" id="right" value="RIGHT"></button>
+      </div>
+
+      <div class="desktop">
+        <p>Play with the keyboard arrow keys</p>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="gridNav">
+        <li>
+          <a href="./index.html"
+            ><img src="assets/home.png" class="icons mobile" />
+            <div class="desktop">Home</div></a
+          >
+        </li>
+        <li>
+          <a href="./setting.html"
+            ><img src="assets/setting-outlined.png" class="icons mobile" />
+            <div class="desktop">Setting</div></a
+          >
+        </li>
+        <li>
+          <a href="./game.html"
+            ><img
+              src="assets/play-circle-outlined.png"
+              class="icons mobile"
+              id="iconPlay"
+            />
+            <div class="desktop">Play</div></a
+          >
+        </li>
+        <li>
+          <a href="./score.html"
+            ><img src="assets/star.png" class="icons mobile" />
+            <div class="desktop">Score</div></a
+          >
+        </li>
+        <li>
+          <a href="./about.html"
+            ><img src="assets/person.png" class="icons mobile" />
+            <div class="desktop">About Us</div></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <footer class="desktop"><p>&#169; Super 5 Snake</p></footer>
+
+    <script src="game.js"></script>
+  </body>
 </html>
