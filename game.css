@@ -10,7 +10,7 @@
 }
 
 .dark {
-  --bgcolor: #1a1a1a;
+  --bgColor: #1a1a1a;
   --secondColor: #57acdc;
   --thridColor: #57dcbe;
   --fourthColor: #e91e63;
@@ -61,7 +61,6 @@ a {
 /* ----------------General ----------------*/
 html {
   font-family: var(--principalFont);
-  background-color: var(--bgColor);
 }
 
 body {
@@ -70,6 +69,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: white;
+  background-color: var(--bgColor);
 }
 
 header {
@@ -118,6 +118,11 @@ footer p {
   align-items: baseline;
 }
 
+#score {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
 /* Display game */
 #gameBoard {
   width: 80%;
@@ -138,7 +143,7 @@ footer p {
   display: grid;
   width: 150px;
   height: 150px;
-  background-image: url(assets/GamePad.png);
+  background-image: url(assets/GamePad_NM.png);
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
 }

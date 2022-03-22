@@ -7,11 +7,28 @@ function theme() {
 
 theme();
 
+function wallActivated() {
+  if (localStorage.getItem('wallSetting')) {
+    document.getElementById('switchw').checked = true;
+  }
+}
+
+wallActivated();
+
 const playButton = document.querySelector('button');
 const audio = document.querySelector('audio');
 const volumeSlider = document.getElementById('volume-slider');
 const volumeOutput = document.getElementById('volume-output');
-const nightMode = document.getElementById('switchwnm');
+const nightModeBtn = document.getElementById('switchwnm');
+const speedSlider = document.getElementById('speed-slider');
+const wallBtn = document.getElementById('switchw');
+
+// speed setting = dans le localStorage, valeur 'speedValue'
+
+speedSlider.addEventListener('input', (e) => {
+  const speedValue = e.currentTarget.value;
+  localStorage.setItem('speedSetting', speedValue);
+});
 
 // sound setting
 function playText() {
@@ -37,12 +54,22 @@ volumeSlider.addEventListener('input', (e) => {
 
 // night mode setting
 
-nightMode.addEventListener('click', () => {
+nightModeBtn.addEventListener('click', () => {
   if (document.body.classList.contains('dark')) {
     document.body.classList.remove('dark');
     localStorage.removeItem('darkmode');
   } else {
     document.body.classList.add('dark');
     localStorage.setItem('darkmode', 'activated');
+  }
+});
+
+// wall setting = dans le localStorage clé 'wallSetting'
+
+wallBtn.addEventListener('click', () => {
+  if (localStorage.getItem('wallSetting')) {
+    localStorage.removeItem('wallSetting');
+  } else {
+    localStorage.setItem('wallSetting', 'activated');
   }
 });
