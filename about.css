@@ -258,9 +258,12 @@ input::placeholder {
     height: 20vh;
     background-size: cover !important;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    text-align: center;
   } 
+  image {
+    background-size: cover !important;
+  }
   .presentation p {
     width: 58%;
     color: white;
