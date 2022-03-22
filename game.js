@@ -4,7 +4,6 @@ const imgGamePad = document.querySelector('.gamepadBtn');
 function theme() {
   if (localStorage.getItem('darkmode') === 'activated') {
     document.body.classList.add('dark');
-    document.getElementById('switchwnm').checked = true;
     imgGamePad.style.backgroundImage = "url('./assets/GamePad_NM.png')";
   } else {
     imgGamePad.style.backgroundImage = "url('./assets/GamePad.png')";
@@ -30,13 +29,16 @@ const secondColor = '#3bc14a';
 const thridColor = '#ffb400';
 const fourthColor = '#c43408';
 
-const wallsActivated = false;
+const wallsActivated = localStorage.getItem('wallSetting') === 'activated';
 
-let speed = 200;
-let timeBonusScore = 100;
+const speedModificator = localStorage.getItem('speedSetting');
+
+let speed = 200 - speedModificator * 10;
+
+let timeBonusScore = 100 + speedModificator * 10;
 
 if (!wallsActivated) {
-  timeBonusScore = 20;
+  timeBonusScore = 25 + speedModificator * 5;
 }
 
 // give some colors to the snake and the game board
