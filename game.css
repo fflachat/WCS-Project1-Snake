@@ -97,6 +97,14 @@ footer p {
 
 /*-------------GAME PAGE------------------ */
 
+/* Display countdown */
+
+#countDown {
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+}
+
 /* Display score */
 .score {
   font-family: var(--principalFont);
@@ -119,6 +127,10 @@ footer p {
   margin-bottom: 50px;
   background-color: var(--secondColor);
   box-shadow: 0px 4px 20px 0px #00000080 inset;
+}
+
+#imgGame {
+  display: none;
 }
 
 /* Style for the gamepad */
@@ -151,12 +163,12 @@ footer p {
 }
 
 #left {
-  grid-column: 3;
+  grid-column: 1;
   grid-row: 2;
 }
 
 #right {
-  grid-column: 1;
+  grid-column: 3;
   grid-row: 2;
 }
 
