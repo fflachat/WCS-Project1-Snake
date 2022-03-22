@@ -1,18 +1,4 @@
-// Night Mode
-const imgGamePad = document.querySelector('.gamepadBtn');
-
-function theme() {
-  if (localStorage.getItem('darkmode') === 'activated') {
-    document.body.classList.add('dark');
-    imgGamePad.style.backgroundImage = "url('./assets/GamePad_NM.png')";
-  } else {
-    imgGamePad.style.backgroundImage = "url('./assets/GamePad.png')";
-  }
-}
-theme();
-
 // GAME
-
 const upBtn = document.querySelector('#up');
 const downBtn = document.querySelector('#down');
 const leftBtn = document.querySelector('#left');
@@ -24,9 +10,9 @@ const imageFood = document.querySelector('#imgFood');
 const imageSnakeHead = document.querySelector('#snakeHead');
 const imageSnakePart = document.querySelector('#snakePart');
 
-const bgColor = '#4da167';
-const secondColor = '#3bc14a';
-const thridColor = '#ffb400';
+let bgColor = '#4da167';
+let secondColor = '#3bc14a';
+let thridColor = '#ffb400';
 const fourthColor = '#c43408';
 
 const wallsActivated = localStorage.getItem('wallSetting') === 'activated';
@@ -40,12 +26,6 @@ let timeBonusScore = 100 + speedModificator * 10;
 if (!wallsActivated) {
   timeBonusScore = 25 + speedModificator * 5;
 }
-
-// give some colors to the snake and the game board
-const boardBorder = 'black';
-const boardBg = secondColor;
-const snakeCol = thridColor;
-const snakeBorder = 'black';
 
 // Define the initial snake
 const snake = [
@@ -71,7 +51,7 @@ const gameBoardCtx = gameBoard.getContext('2d');
 // draw a border around the canvas
 function clearBoard() {
   //  Select the colour to fill the drawing
-  gameBoardCtx.fillStyle = boardBg;
+  gameBoardCtx.fillStyle = secondColor;
 
   // Display Walls if are on
   if (wallsActivated) {
@@ -226,6 +206,20 @@ function moveSnake() {
   }
 }
 
+// Night Mode
+const imgGamePad = document.querySelector('.gamepadBtn');
+
+function theme() {
+  if (localStorage.getItem('darkmode') === 'activated') {
+    document.body.classList.add('dark');
+    imgGamePad.style.backgroundImage = "url('./assets/GamePad_NM.png')";
+    secondColor = '#57acdc';
+    thridColor = '#e91e63';
+  } else {
+    imgGamePad.style.backgroundImage = "url('./assets/GamePad.png')";
+  }
+}
+
 // display a start countdown
 const countDownDisplay = document.querySelectorAll('#countDown');
 let timeLeft = 10;
@@ -256,7 +250,7 @@ function main() {
 }
 
 // Start game
-setTimeout(countdown, 1000);
+theme();
 main();
 genFood();
 drawSnake();
