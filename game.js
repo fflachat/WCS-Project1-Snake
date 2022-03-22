@@ -72,6 +72,13 @@ const gameBoardCtx = gameBoard.getContext('2d');
 function clearBoard() {
   //  Select the colour to fill the drawing
   gameBoardCtx.fillStyle = boardBg;
+
+  // Display Walls if are on
+  if (wallsActivated) {
+    gameBoardCtx.strokeStyle = thridColor;
+    gameBoardCtx.lineWidth = 3;
+  }
+
   // Draw a "filled" rectangle to cover the entire canvas
   gameBoardCtx.fillRect(0, 0, gameBoard.width, gameBoard.height);
   // Draw a "border" around the entire canvas

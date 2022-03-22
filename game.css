@@ -130,8 +130,7 @@ footer p {
   min-height: 45vh;
   border-radius: 20px;
   margin-bottom: 50px;
-  background-color: var(--secondColor);
-  box-shadow: 0px 4px 20px 0px #00000080 inset;
+  /* box-shadow: 0px 4px 20px 0px #00000080 inset; */
 }
 
 #imgGame {
