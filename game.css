@@ -129,6 +129,10 @@ footer p {
   box-shadow: 0px 4px 20px 0px #00000080 inset;
 }
 
+#imgGame {
+  display: none;
+}
+
 /* Style for the gamepad */
 .gamepadBtn {
   display: grid;

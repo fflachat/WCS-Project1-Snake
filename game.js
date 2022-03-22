@@ -7,15 +7,23 @@ const rightBtn = document.querySelector('#right');
 
 const gameBoard = document.querySelector('#gameBoard');
 
+const imageFood = document.querySelector('#imgFood');
+const imageSnakeHead = document.querySelector('#snakeHead');
+const imageSnakePart = document.querySelector('#snakePart');
+
 const bgColor = '#4da167';
 const secondColor = '#3bc14a';
 const thridColor = '#ffb400';
 const fourthColor = '#c43408';
 
-let wallsActivated = false;
+const wallsActivated = false;
 
 let speed = 200;
 let timeBonusScore = 100;
+
+if (!wallsActivated) {
+  timeBonusScore = 20;
+}
 
 // give some colors to the snake and the game board
 const boardBorder = 'black';
@@ -54,32 +62,24 @@ function clearBoard() {
   gameBoardCtx.strokeRect(0, 0, gameBoard.width, gameBoard.height);
 }
 
-// draw the food on the canvas
-function drawFoodCircle() {
-  gameBoardCtx.beginPath();
-  gameBoardCtx.fillStyle = fourthColor;
-  gameBoardCtx.arc(foodY, foodX, 5, 0, 2 * Math.PI);
-  gameBoardCtx.fill();
-}
-
 function drawFood() {
-  gameBoardCtx.fillStyle = 'lightgreen';
-  gameBoardCtx.strokestyle = 'darkgreen';
-  gameBoardCtx.fillRect(foodX, foodY, 10, 10);
-  gameBoardCtx.strokeRect(foodX, foodY, 10, 10);
+  gameBoardCtx.drawImage(imageFood, foodX, foodY, 10, 8);
 }
 
 // Draw one snake part
 function drawSnakePart(snakePart) {
-  // Set the colour of the snake part
-  gameBoardCtx.fillStyle = snakeCol;
-  // Set the border colour of the snake part
-  gameBoardCtx.strokestyle = snakeBorder;
-  // Draw a "filled" rectangle to represent the snake part at the coordinates
-  // the part is located
-  gameBoardCtx.fillRect(snakePart.x, snakePart.y, 10, 10);
-  // Draw a border around the snake part
-  gameBoardCtx.strokeRect(snakePart.x, snakePart.y, 10, 10);
+  // // Set the colour of the snake part
+  // gameBoardCtx.fillStyle = snakeCol;
+  // // Set the border colour of the snake part
+  // gameBoardCtx.strokestyle = snakeBorder;
+  // // Draw a "filled" rectangle to represent the snake part at the coordinates
+  // // the part is located
+  // gameBoardCtx.fillRect(snakePart.x, snakePart.y, 10, 10);
+  // // Draw a border around the snake part
+  // gameBoardCtx.strokeRect(snakePart.x, snakePart.y, 10, 10);
+
+  gameBoardCtx.drawImage(imageSnakePart, snakePart.x, snakePart.y, 10, 10);
+  // gameBoardCtx.drawImage(imageSnakeHead, snakePart.x, snakePart.y, 10, 10);
 }
 
 // Draw the snake on the canvas
@@ -124,7 +124,7 @@ function genFood() {
   });
 }
 
-// controle for the desktop version with keyboard
+// controle for keyboard and gamepad
 function changeDir(event) {
   const LEFT_KEY = 37;
   const RIGHT_KEY = 39;
@@ -157,8 +157,6 @@ function changeDir(event) {
     dy = 10;
   }
 }
-
-// Function for mobile version with gamepad control
 
 // move the snake
 function moveSnake() {
