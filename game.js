@@ -1,3 +1,17 @@
+// Night Mode
+const imgGamePad = document.querySelector('.gamepadBtn');
+
+function theme() {
+  if (localStorage.getItem('darkmode') === 'activated') {
+    document.body.classList.add('dark');
+    document.getElementById('switchwnm').checked = true;
+    imgGamePad.style.backgroundImage = "url('./assets/GamePad_NM.png')";
+  } else {
+    imgGamePad.style.backgroundImage = "url('./assets/GamePad.png')";
+  }
+}
+theme();
+
 // GAME
 
 const upBtn = document.querySelector('#up');
