@@ -1,6 +1,7 @@
 function theme() {
   if (localStorage.getItem('darkmode') === 'activated') {
     document.body.classList.add('dark');
+    document.getElementById('switchwnm').checked = true;
   }
 }
 
@@ -14,12 +15,12 @@ const nightMode = document.getElementById('switchwnm');
 
 // sound setting
 function playText() {
-  if (playButton.innerText === 'PLAY') {
-    playButton.innerText = 'MUTE';
+  if (playButton.innerText === '►') {
+    playButton.innerText = '❙❙';
     playButton.classList.toggle('buttonMute');
     audio.play();
   } else {
-    playButton.innerText = 'PLAY';
+    playButton.innerText = '►';
     playButton.classList.toggle('buttonMute');
     audio.pause();
   }
@@ -31,6 +32,7 @@ volumeSlider.addEventListener('input', (e) => {
   const volumeValue = e.currentTarget.value;
   volumeOutput.innerHTML = volumeValue;
   audio.volume = volumeValue / 100;
+  localStorage.setItem('volume', volumeValue);
 });
 
 // night mode setting
