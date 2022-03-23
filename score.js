@@ -1,13 +1,12 @@
 const clickTest = document.querySelector('h1');
-const score = [1, 90, 4, 87, 43, 99, 77, 21];
 const firstPlayerName = document.getElementById('firstPlayerName');
 
-const player1 = {
-  name: 'julie',
-  score: 2000,
-};
+const playerTable = [] || JSON.parse(localStorage.getItem('playerTable'));
 
-score.push(player1.score);
+for (i in playerTable) {
+  if (playerTable[i].score < playerTable[i + 1].score) {
+  }
+}
 
 // TRI DECROISSANT (sort tri croissant- reverse tri decroissant- trinumbers trier les nombres)
 function triNumbers(a, b) {
@@ -15,7 +14,6 @@ function triNumbers(a, b) {
 }
 
 score.sort(triNumbers);
-score.reverse();
 
 // REMPLACER LES SCORES SUR LE PODIUM ET LE CLASSEMENT
 const firstPoints = document.getElementById('firstPoints');
@@ -28,14 +26,14 @@ const seventhPoints = document.getElementById('seventhPoints');
 const eigthPoints = document.getElementById('eigthPoints');
 
 function triClassemnt() {
-  firstPoints.innerText = score[0];
-  secondPoints.innerText = score[1];
-  thirdPoints.innerText = score[2];
-  fourthPoints.innerText = score[3];
-  fifthPoints.innerText = score[4];
-  sixthPoints.innerText = score[5];
-  seventhPoints.innerText = score[6];
-  eigthPoints.innerText = score[7];
+  firstPoints.innerText = playerTable[0];
+  secondPoints.innerText = playerTable[1];
+  thirdPoints.innerText = playerTable[2];
+  fourthPoints.innerText = playerTable[3];
+  fifthPoints.innerText = playerTable[4];
+  sixthPoints.innerText = playerTable[5];
+  seventhPoints.innerText = playerTable[6];
+  eigthPoints.innerText = playerTable[7];
 }
 triClassemnt();
 
