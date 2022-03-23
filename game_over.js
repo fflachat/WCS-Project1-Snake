@@ -1,11 +1,27 @@
 // Trick to go to the score page for the demo
-const btnScore = document.querySelector('#nameInputBtn');
+const btn = document.querySelector('#nameInputBtn');
 
-document.getElementById('score').innerHTML =
-  window.localStorage.getItem('Score');
+class Player {
+  constructor(name, score) {
+    this.name = name;
+    this.score = score;
+    this.id = name + score;
+  }
+}
 
-btnScore.addEventListener('click', (event) => {
+const playerTable = [] || JSON.parse(localStorage.getItem('playerTable'));
+
+const score = window.localStorage.getItem('Score');
+
+document.getElementById('score').innerHTML = score;
+
+btn.addEventListener('click', (event) => {
   event.preventDefault();
+  const name = document.getElementById('nameInput').value;
+  const player = new Player(name, score);
+  playerTable.push(player);
+  const playerTableJSON = JSON.stringify(playerTable);
+  localStorage.setItem('playerTable', playerTableJSON);
   window.location.href = './score.html';
 });
 
