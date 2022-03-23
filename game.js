@@ -1,4 +1,4 @@
-// GAME
+// --------------- GAME----------------------
 const upBtn = document.querySelector('#up');
 const downBtn = document.querySelector('#down');
 const leftBtn = document.querySelector('#left');
@@ -10,21 +10,17 @@ const imageFood = document.querySelector('#imgFood');
 const imageSnakeHead = document.querySelector('#snakeHead');
 const imageSnakePart = document.querySelector('#snakePart');
 
-let bgColor = '#4da167';
 let secondColor = '#3bc14a';
 let thridColor = '#ffb400';
-const fourthColor = '#c43408';
 
 let imgSuffix = '';
 
 const wallsActivated = localStorage.getItem('wallSetting') === 'activated';
 
+// Modify speed and score calculation
 const speedModificator = localStorage.getItem('speedSetting');
-
 let speed = 200 - speedModificator * 10;
-
 let timeBonusScore = 100 + speedModificator * 100;
-
 if (!wallsActivated) {
   timeBonusScore = 25 + speedModificator * 50;
 }
@@ -73,19 +69,11 @@ function drawFood() {
 
 // Draw one snake part
 function drawSnakePart(snakePart) {
-  // // Set the colour of the snake part
-  // gameBoardCtx.fillStyle = 'blue';
-  // // Set the border colour of the snake part
-  // gameBoardCtx.strokestyle = 'green';
-  // // Draw a "filled" rectangle to represent the snake part at the coordinates
-  // // the part is located
-  // gameBoardCtx.fillRect(snakePart.x, snakePart.y, 10, 10);
-  // // Draw a border around the snake part
-  // gameBoardCtx.strokeRect(snakePart.x, snakePart.y, 10, 10);
   imageSnakePart.src = `./assets/snakepart${imgSuffix}.png`;
   gameBoardCtx.drawImage(imageSnakePart, snakePart.x, snakePart.y, 10, 10);
 }
 
+// Draw snake head and rotate it with the direction
 function drawSnakeHead(snakePart) {
   const goingUp = dy === -10;
   const goingDown = dy === 10;
@@ -258,7 +246,6 @@ function moveSnake() {
 
 // Night Mode
 const imgGamePad = document.querySelector('.gamepadBtn');
-
 function theme() {
   if (localStorage.getItem('darkmode') === 'activated') {
     document.body.classList.add('dark');
@@ -272,15 +259,6 @@ function theme() {
 }
 
 // display a start countdown
-const countDownDisplay = document.querySelectorAll('#countDown');
-let timeLeft = 10;
-function countdown() {
-  timeLeft--;
-  countDownDisplay.innerText = timeLeft;
-  if (timeLeft > 0) {
-    setTimeout(countdown, 1000);
-  }
-}
 
 // main function called repeatedly to keep the game running
 function main() {
@@ -288,6 +266,7 @@ function main() {
     window.location.href = './game_over.html';
     window.localStorage.setItem('Score', score);
   }
+
   changingDir = false;
   setTimeout(() => {
     timeBonusScore -= 1;
@@ -302,9 +281,20 @@ function main() {
 
 // Start game
 theme();
-main();
-genFood();
-drawSnake();
+const countDownDisplay = document.querySelector('#countDown');
+let timeleft = 3;
+const startGame = setInterval(() => {
+  if (timeleft < 0) {
+    clearInterval(startGame);
+    countDownDisplay.style.display = 'none';
+    main();
+    genFood();
+    drawSnake();
+  } else {
+    countDownDisplay.innerHTML = timeleft;
+    timeleft--;
+  }
+}, 1000);
 
 // Event listeners
 document.addEventListener('keydown', changeDir);

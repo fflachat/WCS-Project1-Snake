@@ -101,9 +101,11 @@ footer p {
 /* Display countdown */
 
 #countDown {
-  background-color: blue;
-  width: 50px;
-  height: 50px;
+  margin: auto;
+  position: absolute;
+  top: 20%;
+  color: var(--thridColor);
+  font-size: 10rem;
 }
 
 /* Display score */
@@ -132,7 +134,8 @@ footer p {
   min-height: 300px;
   border-radius: 20px;
   margin-bottom: 50px;
-  /* box-shadow: 0px 4px 20px 0px #00000080 inset; */
+  background-color: var(--secondColor);
+  box-shadow: 0px 4px 20px 0px #00000080 inset;
 }
 
 #imgGame {
