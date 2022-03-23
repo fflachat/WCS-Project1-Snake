@@ -5,6 +5,7 @@
   --bgColor: #4da167;
   --secondColor: #3bc14a;
   --thridColor: #ffb400;
+  --fourthColor: #c43408;
   --principalFont: Viga;
   --secondaryFont: Roboto;
 }
@@ -100,9 +101,11 @@ footer p {
 /* Display countdown */
 
 #countDown {
-  background-color: blue;
-  width: 50px;
-  height: 50px;
+  margin: auto;
+  position: absolute;
+  top: 20%;
+  color: var(--thridColor);
+  font-size: 10rem;
 }
 
 /* Display score */
@@ -114,7 +117,7 @@ footer p {
   width: 80%;
   margin-top: 20px;
   margin-bottom: 10px;
-  justify-content: flex -start;
+  justify-content: flex-start;
   align-items: baseline;
 }
 
@@ -126,8 +129,10 @@ footer p {
 /* Display game */
 #gameBoard {
   width: 80%;
-  max-height: 50vh;
-  min-height: 45vh;
+  max-width: 800px;
+  max-height: 800px;
+  min-width: 300px;
+  min-height: 300px;
   border-radius: 20px;
   margin-bottom: 50px;
   background-color: var(--secondColor);
@@ -190,8 +195,9 @@ footer p {
   justify-content: center;
   align-items: center;
   width: 80%;
-  max-height: 50vh;
-  min-height: 45vh;
+  max-width: 800px;
+  max-height: 800px;
+  min-height: 300px;
   border-radius: 20px;
   background-color: var(--secondColor);
   margin-bottom: 50px;
