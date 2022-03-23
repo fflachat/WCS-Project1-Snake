@@ -15,16 +15,18 @@ let secondColor = '#3bc14a';
 let thridColor = '#ffb400';
 const fourthColor = '#c43408';
 
+let imgSuffix = '';
+
 const wallsActivated = localStorage.getItem('wallSetting') === 'activated';
 
 const speedModificator = localStorage.getItem('speedSetting');
 
 let speed = 200 - speedModificator * 10;
 
-let timeBonusScore = 100 + speedModificator * 10;
+let timeBonusScore = 100 + speedModificator * 100;
 
 if (!wallsActivated) {
-  timeBonusScore = 25 + speedModificator * 5;
+  timeBonusScore = 25 + speedModificator * 50;
 }
 
 // Define the initial snake
@@ -80,7 +82,7 @@ function drawSnakePart(snakePart) {
   // gameBoardCtx.fillRect(snakePart.x, snakePart.y, 10, 10);
   // // Draw a border around the snake part
   // gameBoardCtx.strokeRect(snakePart.x, snakePart.y, 10, 10);
-
+  imageSnakePart.src = `./assets/snakepart${imgSuffix}.png`;
   gameBoardCtx.drawImage(imageSnakePart, snakePart.x, snakePart.y, 10, 10);
 }
 
@@ -91,7 +93,7 @@ function drawSnakeHead(snakePart) {
   const goingRight = dx === 10;
 
   if (goingUp) {
-    imageSnakeHead.src = './assets/snakeHeadUp.png';
+    imageSnakeHead.src = `./assets/snakeHeadUp${imgSuffix}.png`;
     gameBoardCtx.drawImage(
       imageSnakeHead,
       snakePart.x - 5,
@@ -101,7 +103,7 @@ function drawSnakeHead(snakePart) {
     );
   }
   if (goingDown) {
-    imageSnakeHead.src = './assets/snakeHeadDown.png';
+    imageSnakeHead.src = `./assets/snakeHeadDown${imgSuffix}.png`;
     gameBoardCtx.drawImage(
       imageSnakeHead,
       snakePart.x - 5,
@@ -111,7 +113,7 @@ function drawSnakeHead(snakePart) {
     );
   }
   if (goingLeft) {
-    imageSnakeHead.src = './assets/snakeHeadLeft.png';
+    imageSnakeHead.src = `./assets/snakeHeadLeft${imgSuffix}.png`;
     gameBoardCtx.drawImage(
       imageSnakeHead,
       snakePart.x - 10,
@@ -121,7 +123,7 @@ function drawSnakeHead(snakePart) {
     );
   }
   if (goingRight) {
-    imageSnakeHead.src = './assets/snakeHeadRight.png';
+    imageSnakeHead.src = `./assets/snakeHeadRight${imgSuffix}.png`;
     gameBoardCtx.drawImage(
       imageSnakeHead,
       snakePart.x,
@@ -260,11 +262,12 @@ const imgGamePad = document.querySelector('.gamepadBtn');
 function theme() {
   if (localStorage.getItem('darkmode') === 'activated') {
     document.body.classList.add('dark');
-    imgGamePad.style.backgroundImage = "url('./assets/GamePad_NM.png')";
+    imgSuffix = '_NM';
+    imgGamePad.style.backgroundImage = `url('./assets/GamePad${imgSuffix}.png')`;
     secondColor = '#57acdc';
     thridColor = '#e91e63';
   } else {
-    imgGamePad.style.backgroundImage = "url('./assets/GamePad.png')";
+    imgGamePad.style.backgroundImage = `url('./assets/GamePad${imgSuffix}.png')`;
   }
 }
 
