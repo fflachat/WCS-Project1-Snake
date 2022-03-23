@@ -24,3 +24,11 @@ btn.addEventListener('click', (event) => {
   localStorage.setItem('playerTable', playerTableJSON);
   window.location.href = './score.html';
 });
+
+// Night Theme mode
+function theme() {
+  if (localStorage.getItem('darkmode') === 'activated') {
+    document.body.classList.add('dark');
+  }
+}
+theme();
