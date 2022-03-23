@@ -1,19 +1,18 @@
 const clickTest = document.querySelector('h1');
-const firstPlayerName = document.getElementById('firstPlayerName');
 
 const playerTable = [] || JSON.parse(localStorage.getItem('playerTable'));
 
-for (i in playerTable) {
-  if (playerTable[i].score < playerTable[i + 1].score) {
+function sortPlayer() {
+  for (let i = 0; i < playerTable.length; i++) {
+    for (let j = 0; j < playerTable.length; j++) {
+      if (playerTable[i].score < playerTable[j].score) {
+        const playerTampon = playerTable[i];
+        playerTable[i] = playerTable[j];
+        playerTable[j] = playerTampon;
+      }
+    }
   }
 }
-
-// TRI DECROISSANT (sort tri croissant- reverse tri decroissant- trinumbers trier les nombres)
-function triNumbers(a, b) {
-  return a - b;
-}
-
-score.sort(triNumbers);
 
 // REMPLACER LES SCORES SUR LE PODIUM ET LE CLASSEMENT
 const firstPoints = document.getElementById('firstPoints');
@@ -25,28 +24,38 @@ const sixthPoints = document.getElementById('sixthPoints');
 const seventhPoints = document.getElementById('seventhPoints');
 const eigthPoints = document.getElementById('eigthPoints');
 
+// REMPLACER LES NOMS SUR LE PODIUM ET LE CLASSEMENT
+const firstPlayerName = document.getElementById('firstPlayerName');
+const secondPlayerName = document.getElementById('secondPlayerName');
+const thirdPlayerName = document.getElementById('thirdPlayerName');
+const fourthPlayerName = document.getElementById('fourthPlayerName');
+const fifthPlayerName = document.getElementById('fifthPlayerName');
+const sixthPlayerName = document.getElementById('sixthPlayerName');
+const seventhPlayerName = document.getElementById('seventhPlayerName');
+const eigthPlayerName = document.getElementById('eigthPlayerName');
+
 function triClassemnt() {
-  firstPoints.innerText = playerTable[0];
-  secondPoints.innerText = playerTable[1];
-  thirdPoints.innerText = playerTable[2];
-  fourthPoints.innerText = playerTable[3];
-  fifthPoints.innerText = playerTable[4];
-  sixthPoints.innerText = playerTable[5];
-  seventhPoints.innerText = playerTable[6];
-  eigthPoints.innerText = playerTable[7];
+  firstPoints.innerText = playerTable[0].value;
+  secondPoints.innerText = playerTable[1].value;
+  thirdPoints.innerText = playerTable[2].value;
+  fourthPoints.innerText = playerTable[3].value;
+  fifthPoints.innerText = playerTable[4].value;
+  sixthPoints.innerText = playerTable[5].value;
+  seventhPoints.innerText = playerTable[6].value;
+  eigthPoints.innerText = playerTable[7].value;
+
+  firstPlayerName.innerText = playerTable[0].value;
+  secondPlayerName.innerText = playerTable[1].value;
+  thirdPlayerName.innerText = playerTable[2].value;
+  fourthPlayerName.innerText = playerTable[3].value;
+  fifthPlayerName.innerText = playerTable[4].value;
+  sixthPlayerName.innerText = playerTable[5].value;
+  seventhPlayerName.innerText = playerTable[6].value;
+  eigthPlayerName.innerText = playerTable[7].value;
 }
-triClassemnt();
 
 // TEST AJOUT RANDOM ET RETRI
 clickTest.addEventListener('click', () => {
-  const random = Math.floor(Math.random() * 500);
-  score.push(random);
-  score.sort(triNumbers);
-  score.reverse();
+  sortPlayer();
   triClassemnt();
-  for (let i = 0; i < score.length; i++) {
-    if (score[i] === player1.score) {
-      firstPlayerName.innerText = player1.name;
-    }
-  }
 });
