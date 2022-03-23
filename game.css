@@ -131,6 +131,7 @@ footer p {
   width: 80%;
   max-width: 800px;
   max-height: 800px;
+  min-width: 300px;
   min-height: 300px;
   border-radius: 20px;
   margin-bottom: 50px;

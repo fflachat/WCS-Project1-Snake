@@ -27,9 +27,9 @@ if (!wallsActivated) {
 
 // Define the initial snake
 const snake = [
-  { x: 20, y: 20 },
-  { x: 19, y: 20 },
-  { x: 18, y: 20 },
+  { x: 50, y: 80 },
+  { x: 40, y: 80 },
+  { x: 30, y: 80 },
 ];
 
 // set the score
@@ -257,8 +257,6 @@ function theme() {
     imgGamePad.style.backgroundImage = `url('./assets/GamePad${imgSuffix}.png')`;
   }
 }
-
-// display a start countdown
 
 // main function called repeatedly to keep the game running
 function main() {
