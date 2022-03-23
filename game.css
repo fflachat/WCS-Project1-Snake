@@ -115,7 +115,7 @@ footer p {
   width: 80%;
   margin-top: 20px;
   margin-bottom: 10px;
-  justify-content: flex -start;
+  justify-content: flex-start;
   align-items: baseline;
 }
 
@@ -127,8 +127,9 @@ footer p {
 /* Display game */
 #gameBoard {
   width: 80%;
-  max-height: 50vh;
-  min-height: 45vh;
+  max-width: 800px;
+  max-height: 800px;
+  min-height: 300px;
   border-radius: 20px;
   margin-bottom: 50px;
   /* box-shadow: 0px 4px 20px 0px #00000080 inset; */
@@ -190,8 +191,9 @@ footer p {
   justify-content: center;
   align-items: center;
   width: 80%;
-  max-height: 50vh;
-  min-height: 45vh;
+  max-width: 800px;
+  max-height: 800px;
+  min-height: 300px;
   border-radius: 20px;
   background-color: var(--secondColor);
   margin-bottom: 50px;

@@ -72,9 +72,9 @@ function drawFood() {
 // Draw one snake part
 function drawSnakePart(snakePart) {
   // // Set the colour of the snake part
-  // gameBoardCtx.fillStyle = snakeCol;
+  // gameBoardCtx.fillStyle = 'blue';
   // // Set the border colour of the snake part
-  // gameBoardCtx.strokestyle = snakeBorder;
+  // gameBoardCtx.strokestyle = 'green';
   // // Draw a "filled" rectangle to represent the snake part at the coordinates
   // // the part is located
   // gameBoardCtx.fillRect(snakePart.x, snakePart.y, 10, 10);
@@ -82,13 +82,61 @@ function drawSnakePart(snakePart) {
   // gameBoardCtx.strokeRect(snakePart.x, snakePart.y, 10, 10);
 
   gameBoardCtx.drawImage(imageSnakePart, snakePart.x, snakePart.y, 10, 10);
-  // gameBoardCtx.drawImage(imageSnakeHead, snakePart.x, snakePart.y, 10, 10);
+}
+
+function drawSnakeHead(snakePart) {
+  const goingUp = dy === -10;
+  const goingDown = dy === 10;
+  const goingLeft = dx === -10;
+  const goingRight = dx === 10;
+
+  if (goingUp) {
+    imageSnakeHead.src = './assets/snakeHeadUp.png';
+    gameBoardCtx.drawImage(
+      imageSnakeHead,
+      snakePart.x - 5,
+      snakePart.y - 5,
+      20,
+      15
+    );
+  }
+  if (goingDown) {
+    imageSnakeHead.src = './assets/snakeHeadDown.png';
+    gameBoardCtx.drawImage(
+      imageSnakeHead,
+      snakePart.x - 5,
+      snakePart.y,
+      20,
+      15
+    );
+  }
+  if (goingLeft) {
+    imageSnakeHead.src = './assets/snakeHeadLeft.png';
+    gameBoardCtx.drawImage(
+      imageSnakeHead,
+      snakePart.x - 10,
+      snakePart.y - 3,
+      20,
+      15
+    );
+  }
+  if (goingRight) {
+    imageSnakeHead.src = './assets/snakeHeadRight.png';
+    gameBoardCtx.drawImage(
+      imageSnakeHead,
+      snakePart.x,
+      snakePart.y - 3,
+      20,
+      15
+    );
+  }
 }
 
 // Draw the snake on the canvas
 function drawSnake() {
-  // Draw each part
-  snake.forEach(drawSnakePart);
+  drawSnakeHead(snake[0]);
+  const snakeBody = snake.slice(1);
+  snakeBody.forEach(drawSnakePart);
 }
 
 // verify the status of the game
