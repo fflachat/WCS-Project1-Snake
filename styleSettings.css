@@ -72,6 +72,10 @@ a {
   display: none;
 }
 
+.desktop:hover {
+  color: var(--fourthColor);
+}
+
 /* FOOTER */
 
 footer {

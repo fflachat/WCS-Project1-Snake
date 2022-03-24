@@ -1,7 +1,12 @@
+const iconSetting = document.getElementById('iconSetting');
+
 function theme() {
   if (localStorage.getItem('darkmode') === 'activated') {
     document.body.classList.add('dark');
     document.getElementById('switchwnm').checked = true;
+    iconSetting.setAttribute('src', './assets/setting-outlined-dark.png');
+  } else {
+    iconSetting.setAttribute('src', './assets/setting-outlined-orange.png');
   }
 }
 
@@ -49,6 +54,9 @@ function playText() {
 
 playButton.addEventListener('click', playText);
 
+volumeSlider.value = localStorage.getItem('volume');
+volumeOutput.innerHTML = localStorage.getItem('volume');
+
 volumeSlider.addEventListener('input', (e) => {
   const volumeValue = e.currentTarget.value;
   volumeOutput.innerHTML = volumeValue;
@@ -62,9 +70,11 @@ nightModeBtn.addEventListener('click', () => {
   if (document.body.classList.contains('dark')) {
     document.body.classList.remove('dark');
     localStorage.removeItem('darkmode');
+    iconSetting.setAttribute('src', './assets/setting-outlined-orange.png');
   } else {
     document.body.classList.add('dark');
     localStorage.setItem('darkmode', 'activated');
+    iconSetting.setAttribute('src', './assets/setting-outlined-dark.png');
   }
 });
 

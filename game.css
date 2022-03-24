@@ -195,8 +195,9 @@ footer p {
   justify-content: center;
   align-items: center;
   width: 80%;
-  max-width: 800px;
-  max-height: 800px;
+  max-width: 1000px;
+  max-height: 1000px;
+  min-width: 300px;
   min-height: 300px;
   border-radius: 20px;
   background-color: var(--secondColor);
@@ -251,6 +252,10 @@ footer p {
 
 .desktop {
   display: none;
+}
+
+.desktop:hover {
+  color: var(--fourthColor);
 }
 
 @media screen and (min-width: 768px) {
