@@ -1,9 +1,11 @@
 // --------------- AUDIO----------------------
 const audio = document.querySelector('audio');
+const volumeValue = localStorage.getItem('volume');
 
 function audioPlay() {
   if (localStorage.getItem('audio')) {
     audio.play();
+    audio.volume = volumeValue / 100;
   }
 }
 audioPlay();

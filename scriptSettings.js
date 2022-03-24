@@ -54,6 +54,9 @@ function playText() {
 
 playButton.addEventListener('click', playText);
 
+volumeSlider.value = localStorage.getItem('volume');
+volumeOutput.innerHTML = localStorage.getItem('volume');
+
 volumeSlider.addEventListener('input', (e) => {
   const volumeValue = e.currentTarget.value;
   volumeOutput.innerHTML = volumeValue;
