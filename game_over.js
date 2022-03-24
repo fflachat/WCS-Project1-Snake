@@ -8,3 +8,11 @@ btnScore.addEventListener('click', (event) => {
   event.preventDefault();
   window.location.href = './score.html';
 });
+
+// Night Theme mode
+function theme() {
+  if (localStorage.getItem('darkmode') === 'activated') {
+    document.body.classList.add('dark');
+  }
+}
+theme();

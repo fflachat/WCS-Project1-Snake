@@ -25,6 +25,8 @@ const wallBtn = document.getElementById('switchw');
 
 // speed setting = dans le localStorage, valeur 'speedValue'
 
+speedSlider.value = localStorage.getItem('speedSetting');
+
 speedSlider.addEventListener('input', (e) => {
   const speedValue = e.currentTarget.value;
   localStorage.setItem('speedSetting', speedValue);

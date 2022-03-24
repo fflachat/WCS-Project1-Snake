@@ -11,8 +11,9 @@
     <div class="about_us">
       <div class="presentation">
         <h2>About-Us</h2>
-
-        <img src="assets/snake.jpg" alt="snake_game" />
+        <div class="image">
+          <img src="assets/snake.jpg" alt="snake_game" />
+        </div>
         <p>
           Vous aimez les serpents et êtes fans des jeux en ligne ? Découvrez
           notre nouveau Snake game et tenter de faire manger le maximium de
@@ -23,15 +24,18 @@
         <h2>Contact Us</h2>
 
         <div class="input">
-          <input type="text" id="input" placeholder="your name here" />
+          <!-- <label for="email">Name <span class="input_required">*</span></label> -->
+          <input type="text" id="input" placeholder="your name here" required />
         </div>
         <div class="message">
+          <!-- <label for="message">Message <span class="input_required">*</span></label> -->
           <textarea
             name=""
             id="message"
-            cols="20"
-            rows="8"
+            cols="30"
+            rows="10"
             placeholder="your message here"
+            required
           ></textarea>
         </div>
         <div class="button">
@@ -81,5 +85,6 @@
     <footer class="desktop">
       <p>&#169; Super 5 Snake</p>
     </footer>
+    <script src="about.js"></script>
   </body>
 </html>
