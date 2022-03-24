@@ -3,9 +3,8 @@ const imgPlayButton = document.getElementById('playButton');
 const iconHome = document.getElementById('iconHome');
 
 function theme() {
-  if (localStorage.getItem('darkmode') === 'activated') {
+  if (localStorage.getItem('darkmode')) {
     document.body.classList.add('dark');
-    document.getElementById('switchwnm').checked = true;
     imgPlayButton.setAttribute('src', './assets/PlayButton_NM.png');
     iconHome.setAttribute('src', './assets/home-night.png');
   } else {
