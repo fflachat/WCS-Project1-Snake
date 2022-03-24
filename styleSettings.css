@@ -28,7 +28,7 @@ body {
 }
 
 main {
-  height: 90vh;
+  height: 88vh;
 }
 
 /* NAVIGATION BAR */
@@ -36,12 +36,10 @@ main {
 nav {
   background-color: var(--thridColor);
   height: 10vh;
-  margin: 0.8rem;
   width: 95%;
+  margin: 0 0.6rem;
   border-radius: 10px;
   box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.25);
-  position: absolute;
-  bottom: 0;
 }
 
 .gridNav {
