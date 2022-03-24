@@ -8,13 +8,11 @@ theme();
 
 const playerTable = JSON.parse(localStorage.getItem('playerTable')) || [];
 
-console.log(playerTable);
-
 function sortPlayer() {
   for (let i = 0; i < playerTable.length; i++) {
     for (let j = 0; j < playerTable.length; j++) {
-      const p1 = playerTable[i].score || 0;
-      const p2 = playerTable[j].score || 0;
+      const p1 = parseInt(playerTable[i].score, 10) || 0;
+      const p2 = parseInt(playerTable[j].score, 10) || 0;
       if (p1 > p2) {
         const playerTampon = playerTable[i];
         playerTable[i] = playerTable[j];

@@ -30,9 +30,9 @@ const wallsActivated = localStorage.getItem('wallSetting') === 'activated';
 // Modify speed and score calculation
 const speedModificator = localStorage.getItem('speedSetting');
 let speed = 200 - speedModificator * 10;
-let timeBonusScore = 100 + speedModificator * 100;
+let timeBonusScore = speedModificator * 50;
 if (!wallsActivated) {
-  timeBonusScore = 20 + speedModificator * 20;
+  timeBonusScore = speedModificator * 20;
 }
 
 // Define the initial snake
@@ -247,9 +247,9 @@ function moveSnake() {
     // Generate new food location
     genFood();
     speed /= 1.05; // Speed increase with the quantity of eaten food
-    timeBonusScore = 100 + speedModificator * 100;
+    timeBonusScore = speedModificator * 50;
     if (!wallsActivated) {
-      timeBonusScore = 20 + speedModificator * 20;
+      timeBonusScore = speedModificator * 20;
     }
   } else {
     // Remove the last part of snake body
