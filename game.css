@@ -5,12 +5,13 @@
   --bgColor: #4da167;
   --secondColor: #3bc14a;
   --thridColor: #ffb400;
+  --fourthColor: #c43408;
   --principalFont: Viga;
   --secondaryFont: Roboto;
 }
 
 .dark {
-  --bgcolor: #1a1a1a;
+  --bgColor: #1a1a1a;
   --secondColor: #57acdc;
   --thridColor: #57dcbe;
   --fourthColor: #e91e63;
@@ -61,7 +62,6 @@ a {
 /* ----------------General ----------------*/
 html {
   font-family: var(--principalFont);
-  background-color: var(--bgColor);
 }
 
 body {
@@ -70,6 +70,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: white;
+  background-color: var(--bgColor);
 }
 
 header {
@@ -97,6 +98,16 @@ footer p {
 
 /*-------------GAME PAGE------------------ */
 
+/* Display countdown */
+
+#countDown {
+  margin: auto;
+  position: absolute;
+  top: 20%;
+  color: var(--thridColor);
+  font-size: 10rem;
+}
+
 /* Display score */
 .score {
   font-family: var(--principalFont);
@@ -106,19 +117,30 @@ footer p {
   width: 80%;
   margin-top: 20px;
   margin-bottom: 10px;
-  justify-content: flex -start;
+  justify-content: flex-start;
   align-items: baseline;
+}
+
+#score {
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
 /* Display game */
 #gameBoard {
   width: 80%;
-  max-height: 50vh;
-  min-height: 45vh;
+  max-width: 1000px;
+  max-height: 1000px;
+  min-width: 300px;
+  min-height: 300px;
   border-radius: 20px;
   margin-bottom: 50px;
   background-color: var(--secondColor);
   box-shadow: 0px 4px 20px 0px #00000080 inset;
+}
+
+#imgGame {
+  display: none;
 }
 
 /* Style for the gamepad */
@@ -126,7 +148,7 @@ footer p {
   display: grid;
   width: 150px;
   height: 150px;
-  background-image: url(assets/GamePad.png);
+  background-image: url(assets/GamePad_NM.png);
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
 }
@@ -151,12 +173,12 @@ footer p {
 }
 
 #left {
-  grid-column: 3;
+  grid-column: 1;
   grid-row: 2;
 }
 
 #right {
-  grid-column: 1;
+  grid-column: 3;
   grid-row: 2;
 }
 
@@ -173,8 +195,10 @@ footer p {
   justify-content: center;
   align-items: center;
   width: 80%;
-  max-height: 50vh;
-  min-height: 45vh;
+  max-width: 1000px;
+  max-height: 1000px;
+  min-width: 300px;
+  min-height: 300px;
   border-radius: 20px;
   background-color: var(--secondColor);
   margin-bottom: 50px;
@@ -228,6 +252,10 @@ footer p {
 
 .desktop {
   display: none;
+}
+
+.desktop:hover {
+  color: var(--fourthColor);
 }
 
 @media screen and (min-width: 768px) {
