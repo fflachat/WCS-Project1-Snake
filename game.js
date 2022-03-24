@@ -1,5 +1,14 @@
-// GAME
+// --------------- AUDIO----------------------
+const audio = document.querySelector('audio');
 
+function audioPlay() {
+  if (localStorage.getItem('audio')) {
+    audio.play();
+  }
+}
+audioPlay();
+
+// --------------- GAME----------------------
 const upBtn = document.querySelector('#up');
 const downBtn = document.querySelector('#down');
 const leftBtn = document.querySelector('#left');
@@ -11,31 +20,26 @@ const imageFood = document.querySelector('#imgFood');
 const imageSnakeHead = document.querySelector('#snakeHead');
 const imageSnakePart = document.querySelector('#snakePart');
 
-const bgColor = '#4da167';
-const secondColor = '#3bc14a';
-const thridColor = '#ffb400';
-const fourthColor = '#c43408';
+let secondColor = '#3bc14a';
+let thridColor = '#ffb400';
 
-const wallsActivated = false;
+let imgSuffix = '';
 
-let speed = 200;
-let timeBonusScore = 100;
+const wallsActivated = localStorage.getItem('wallSetting') === 'activated';
 
+// Modify speed and score calculation
+const speedModificator = localStorage.getItem('speedSetting');
+let speed = 200 - speedModificator * 10;
+let timeBonusScore = speedModificator * 50;
 if (!wallsActivated) {
-  timeBonusScore = 20;
+  timeBonusScore = speedModificator * 20;
 }
-
-// give some colors to the snake and the game board
-const boardBorder = 'black';
-const boardBg = secondColor;
-const snakeCol = thridColor;
-const snakeBorder = 'black';
 
 // Define the initial snake
 const snake = [
-  { x: 20, y: 20 },
-  { x: 19, y: 20 },
-  { x: 18, y: 20 },
+  { x: 50, y: 80 },
+  { x: 40, y: 80 },
+  { x: 30, y: 80 },
 ];
 
 // set the score
@@ -55,7 +59,14 @@ const gameBoardCtx = gameBoard.getContext('2d');
 // draw a border around the canvas
 function clearBoard() {
   //  Select the colour to fill the drawing
-  gameBoardCtx.fillStyle = boardBg;
+  gameBoardCtx.fillStyle = secondColor;
+
+  // Display Walls if are on
+  if (wallsActivated) {
+    gameBoardCtx.strokeStyle = thridColor;
+    gameBoardCtx.lineWidth = 3;
+  }
+
   // Draw a "filled" rectangle to cover the entire canvas
   gameBoardCtx.fillRect(0, 0, gameBoard.width, gameBoard.height);
   // Draw a "border" around the entire canvas
@@ -68,24 +79,64 @@ function drawFood() {
 
 // Draw one snake part
 function drawSnakePart(snakePart) {
-  // // Set the colour of the snake part
-  // gameBoardCtx.fillStyle = snakeCol;
-  // // Set the border colour of the snake part
-  // gameBoardCtx.strokestyle = snakeBorder;
-  // // Draw a "filled" rectangle to represent the snake part at the coordinates
-  // // the part is located
-  // gameBoardCtx.fillRect(snakePart.x, snakePart.y, 10, 10);
-  // // Draw a border around the snake part
-  // gameBoardCtx.strokeRect(snakePart.x, snakePart.y, 10, 10);
-
+  imageSnakePart.src = `./assets/snakepart${imgSuffix}.png`;
   gameBoardCtx.drawImage(imageSnakePart, snakePart.x, snakePart.y, 10, 10);
-  // gameBoardCtx.drawImage(imageSnakeHead, snakePart.x, snakePart.y, 10, 10);
+}
+
+// Draw snake head and rotate it with the direction
+function drawSnakeHead(snakePart) {
+  const goingUp = dy === -10;
+  const goingDown = dy === 10;
+  const goingLeft = dx === -10;
+  const goingRight = dx === 10;
+
+  if (goingUp) {
+    imageSnakeHead.src = `./assets/snakeHeadUp${imgSuffix}.png`;
+    gameBoardCtx.drawImage(
+      imageSnakeHead,
+      snakePart.x - 5,
+      snakePart.y - 5,
+      20,
+      15
+    );
+  }
+  if (goingDown) {
+    imageSnakeHead.src = `./assets/snakeHeadDown${imgSuffix}.png`;
+    gameBoardCtx.drawImage(
+      imageSnakeHead,
+      snakePart.x - 5,
+      snakePart.y,
+      20,
+      15
+    );
+  }
+  if (goingLeft) {
+    imageSnakeHead.src = `./assets/snakeHeadLeft${imgSuffix}.png`;
+    gameBoardCtx.drawImage(
+      imageSnakeHead,
+      snakePart.x - 10,
+      snakePart.y - 3,
+      20,
+      15
+    );
+  }
+  if (goingRight) {
+    imageSnakeHead.src = `./assets/snakeHeadRight${imgSuffix}.png`;
+    gameBoardCtx.drawImage(
+      imageSnakeHead,
+      snakePart.x,
+      snakePart.y - 3,
+      20,
+      15
+    );
+  }
 }
 
 // Draw the snake on the canvas
 function drawSnake() {
-  // Draw each part
-  snake.forEach(drawSnakePart);
+  drawSnakeHead(snake[0]);
+  const snakeBody = snake.slice(1);
+  snakeBody.forEach(drawSnakePart);
 }
 
 // verify the status of the game
@@ -135,7 +186,6 @@ function changeDir(event) {
   if (changingDir) return;
   changingDir = true;
   const dir = event.keyCode || event.target.value;
-  console.log(dir);
   const goingUp = dy === -10;
   const goingDown = dy === 10;
   const goingRight = dx === 10;
@@ -195,22 +245,28 @@ function moveSnake() {
     document.getElementById('score').innerHTML = score;
     // Generate new food location
     genFood();
-    speed -= 5; // Speed increase with the quantity of eaten food
-    timeBonusScore = 100;
+    speed /= 1.05; // Speed increase with the quantity of eaten food
+    timeBonusScore = speedModificator * 50;
+    if (!wallsActivated) {
+      timeBonusScore = speedModificator * 20;
+    }
   } else {
     // Remove the last part of snake body
     snake.pop();
   }
 }
 
-// display a start countdown
-const countDownDisplay = document.querySelectorAll('#countDown');
-let timeLeft = 10;
-function countdown() {
-  timeLeft--;
-  countDownDisplay.innerText = timeLeft;
-  if (timeLeft > 0) {
-    setTimeout(countdown, 1000);
+// Night Mode
+const imgGamePad = document.querySelector('.gamepadBtn');
+function theme() {
+  if (localStorage.getItem('darkmode') === 'activated') {
+    document.body.classList.add('dark');
+    imgSuffix = '_NM';
+    imgGamePad.style.backgroundImage = `url('./assets/GamePad${imgSuffix}.png')`;
+    secondColor = '#57acdc';
+    thridColor = '#e91e63';
+  } else {
+    imgGamePad.style.backgroundImage = `url('./assets/GamePad${imgSuffix}.png')`;
   }
 }
 
@@ -233,10 +289,21 @@ function main() {
 }
 
 // Start game
-setTimeout(countdown, 1000);
-main();
-genFood();
-drawSnake();
+theme();
+const countDownDisplay = document.querySelector('#countDown');
+let timeleft = 3;
+const startGame = setInterval(() => {
+  if (timeleft < 0) {
+    clearInterval(startGame);
+    countDownDisplay.style.display = 'none';
+    genFood();
+    drawSnake();
+    main();
+  } else {
+    countDownDisplay.innerHTML = timeleft;
+    timeleft--;
+  }
+}, 1000);
 
 // Event listeners
 document.addEventListener('keydown', changeDir);

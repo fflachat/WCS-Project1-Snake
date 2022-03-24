@@ -16,7 +16,7 @@
 }
 
 * {
-  padding:0;
+  padding: 0;
   margin: 0;
   font-family: Viga;
 }
@@ -80,7 +80,7 @@ a {
 .about_us {
   width: 100%;
   margin: 5px 0px 0px 0px;
-   /* height: 4vh; */
+  /* height: 4vh; */
   align-items: center;
   text-align: center;
 }
@@ -167,12 +167,12 @@ a {
   background-color: #1a1a1a;
   color: white;
 }
-input:checked[type="text"]{
-	background: var(--secondColor) !important;
-  }
-input:hover{
-	background: var(--secondColor) !important;
-  }
+input:checked[type='text'] {
+  background: var(--secondColor) !important;
+}
+input:hover {
+  background: var(--secondColor) !important;
+}
 
 #message {
   height: 15vh;
@@ -185,9 +185,9 @@ input:hover{
   text-align: center;
 }
 
-input:checked[type="text"]{
-	background: var(--secondColor) !important;
-  }
+input:checked[type='text'] {
+  background: var(--secondColor) !important;
+}
 textarea::placeholder,
 input::placeholder {
   color: white;
@@ -223,7 +223,7 @@ input::placeholder {
 
   .about_us {
     display: flex;
-	  margin-top: 30px;
+    margin-top: 30px;
     align-items: center;
     text-align: center;
   }
@@ -263,8 +263,8 @@ input::placeholder {
     align-items: center;
     padding: 20px;
   }
-  input:checked[type="text"]{
-	  background: var(--secondColor) !important;
+  input:checked[type='text'] {
+    background: var(--secondColor) !important;
   }
 
   .presentation {
@@ -273,12 +273,12 @@ input::placeholder {
   }
   .presentation img,
   .presentation p {
-      width: 42%;
-      background-size: auto !important;
-      height: 20vh;
-      background: #3bc14a;
-      box-shadow: inset 0px 2px 10px rgba(0, 0, 0, 0.5);
-      border-radius: 1px;
+    width: 42%;
+    background-size: auto !important;
+    height: 20vh;
+    background: var(--secondColor);
+    box-shadow: inset 0px 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 1px;
   }
   .presentation img {
     height: 20vh;
@@ -286,10 +286,7 @@ input::placeholder {
     display: block;
     margin: auto;
     text-align: center;
-  } 
-  /* .image {
-    background-size: auto;
-  } */
+  }
   .presentation p {
     width: 42%;
     color: white;

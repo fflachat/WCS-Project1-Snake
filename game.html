@@ -9,7 +9,9 @@
   </head>
   <body>
     <header class="desktop"></header>
-
+    <audio loop>
+      <source src="assets/man-is-he-mega-glbml-22045.mp3" type="audio/mp3" />
+    </audio>
     <div class="score">
       <h1>Score :</h1>
       <h2><span id="score">0</span> Pts</h2>
@@ -21,10 +23,19 @@
         alt="image de la nourriture du serpent pour le jeu"
         id="imgFood"
       />
-      <img src="./assets/snakeHead.png" alt="" id="snakeHead" />
+      <img src="./assets/snakeHeadRight.png" alt="" id="snakeHead" />
+      <img src="./assets/snakeHeadUp.png" />
+      <img src="./assets/snakeHeadLeft.png" />
+      <img src="./assets/snakeHeadDown.png" />
+      <img src="./assets/snakeHeadRight_NM.png" />
+      <img src="./assets/snakeHeadUp_NM.png" />
+      <img src="./assets/snakeHeadLeft_NM.png" />
+      <img src="./assets/snakeHeadDown_NM.png" />
+
       <img src="./assets/snakepart.png" alt="" id="snakePart" />
+      <img src="./assets/snakepart_NM.png" />
     </div>
-    <div id="countDown">10</div>
+    <div id="countDown"></div>
 
     <div class="controleInfo">
       <div class="gamepadBtn mobile">
@@ -78,7 +89,7 @@
       </ul>
     </nav>
 
-    <footer class="desktop"><p>&#169; Super 5 Snake</p></footer>
+    <footer class="desktop"><p>&#169; Super 5 Snake - Version 1.00</p></footer>
 
     <script src="game.js"></script>
   </body>
