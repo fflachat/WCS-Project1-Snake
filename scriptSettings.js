@@ -37,10 +37,12 @@ function playText() {
   if (playButton.innerText === '►') {
     playButton.innerText = '❙❙';
     playButton.classList.toggle('buttonMute');
+    localStorage.setItem('audio', 'play');
     audio.play();
   } else {
     playButton.innerText = '►';
     playButton.classList.toggle('buttonMute');
+    localStorage.removeItem('audio', 'play');
     audio.pause();
   }
 }

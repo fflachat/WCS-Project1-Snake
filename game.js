@@ -1,3 +1,13 @@
+// --------------- AUDIO----------------------
+const audio = document.querySelector('audio');
+
+function audioPlay() {
+  if (localStorage.getItem('audio')) {
+    audio.play();
+  }
+}
+audioPlay();
+
 // --------------- GAME----------------------
 const upBtn = document.querySelector('#up');
 const downBtn = document.querySelector('#down');
