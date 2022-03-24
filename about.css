@@ -89,7 +89,6 @@ a {
   background-color: var(--bgcolor);
   color: var(--thridColor);
   text-align: center;
-  /* padding-top: 1px; */
   font-family: Viga;
   align-items: center;
   font-style: normal;
@@ -104,15 +103,18 @@ a {
   background-size: cover !important;
   height: 29vh;
 }
-.presentation p {
+.textPresentation {
   font-size: 16px;
   color: black;
   text-align: center;
-  font-weight: normal;
   padding-top: 10px;
-  font-weight: bolder;
+  font-weight: bold;
   margin-left: auto;
   font-family: Roboto;
+}
+
+.textPresentation p {
+  padding: 15px;
 }
 
 .contact_title h2 {
@@ -147,11 +149,6 @@ a {
 .button {
   text-align: center;
 }
-/* .input label, .message label {
-  width: 62%;
-  display: block;
-  font-size: small ;
-} */
 
 #input {
   height: 5vh;
@@ -276,7 +273,7 @@ input::placeholder {
     margin-top: 15px;
   }
   .presentation img,
-  .presentation p {
+  .textPresentation {
     width: 42%;
     background-size: auto !important;
     height: 20vh;
@@ -291,17 +288,16 @@ input::placeholder {
     margin: auto;
     text-align: center;
   }
-  .presentation p {
+  .textPresentation {
     width: 42%;
     color: white;
-    padding-top: 1%;
-    font-weight: normal;
-    text-align: center;
-    align-items: center;
+    padding-top: 2%;
+    font-weight: bold;
     margin-left: 29%;
     height: 22vh;
     font-size: 15px;
   }
+
   footer {
     background-color: var(--thridColor);
     width: 95%;
