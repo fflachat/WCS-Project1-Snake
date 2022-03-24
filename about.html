@@ -20,22 +20,25 @@
           pommes à votre serpent, tout en évitant de toucher les bords.
         </p>
       </div>
-      <form class="contact_us">
+      <form class="contact_us" id="form">
         <h2>Contact Us</h2>
 
         <div class="input">
           <!-- <label for="email">Name <span class="input_required">*</span></label> -->
-          <input type="text" id="input" placeholder="your name here" required />
+          <input type="text" id="input" name="input" placeholder="your name here" />
         </div>
         <div class="message">
           <!-- <label for="message">Message <span class="input_required">*</span></label> -->
           <textarea
-            name=""
+            name="message"
             id="message"
             cols="30"
             rows="10"
             placeholder="your message here"
+<<<<<<< HEAD
+=======
             required
+>>>>>>> dev
           ></textarea>
         </div>
         <div class="button">
@@ -85,6 +88,7 @@
     <footer class="desktop">
       <p>&#169; Super 5 Snake - Version 1.00</p>
     </footer>
+    <script src="form.js"></script>
     <script src="about.js"></script>
   </body>
 </html>
