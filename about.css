@@ -199,6 +199,10 @@ input::placeholder {
   display: none;
 }
 
+.desktop:hover {
+  color: var(--fourthColor);
+}
+
 /*  Resolutin Desktop */
 
 @media screen and (min-width: 768px) {

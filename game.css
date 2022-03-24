@@ -254,6 +254,10 @@ footer p {
   display: none;
 }
 
+.desktop:hover {
+  color: var(--fourthColor);
+}
+
 @media screen and (min-width: 768px) {
   .mobile {
     display: none;
