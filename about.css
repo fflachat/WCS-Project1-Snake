@@ -250,7 +250,7 @@ input::placeholder {
   .presentation p {
     width: 58%;
     height: 20vh;
-    background: #3bc14a;
+    background: var(--secondColor);
     box-shadow: inset 0px 2px 10px rgba(0, 0, 0, 0.5);
     border-radius: 1px;
   }
@@ -260,7 +260,7 @@ input::placeholder {
     display: block;
     margin: auto;
     text-align: center;
-  } 
+  }
   image {
     background-size: cover !important;
   }
