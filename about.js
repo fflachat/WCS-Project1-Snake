@@ -7,7 +7,6 @@ function theme() {
     document.body.classList.add('dark');
     iconAbout.setAttribute('src', './assets/person-night.png');
     snakeImage.setAttribute('src', './assets/snake-night.jpg');
-    paragraphe.setAttribute('style', 'color: #fff');
   } else {
     iconAbout.setAttribute('src', './assets/person-orange.png');
   }
