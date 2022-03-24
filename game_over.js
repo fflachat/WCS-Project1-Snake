@@ -9,9 +9,9 @@ class Player {
   }
 }
 
-const playerTable = [] || JSON.parse(localStorage.getItem('playerTable'));
+const playerTable = JSON.parse(localStorage.getItem('playerTable')) || [];
 
-const score = window.localStorage.getItem('Score');
+const score = localStorage.getItem('Score');
 
 document.getElementById('score').innerHTML = score;
 
