@@ -32,7 +32,7 @@ const speedModificator = localStorage.getItem('speedSetting');
 let speed = 200 - speedModificator * 10;
 let timeBonusScore = 100 + speedModificator * 100;
 if (!wallsActivated) {
-  timeBonusScore = 25 + speedModificator * 50;
+  timeBonusScore = 20 + speedModificator * 20;
 }
 
 // Define the initial snake
@@ -246,8 +246,11 @@ function moveSnake() {
     document.getElementById('score').innerHTML = score;
     // Generate new food location
     genFood();
-    speed -= 5; // Speed increase with the quantity of eaten food
-    timeBonusScore = 100;
+    speed /= 1.05; // Speed increase with the quantity of eaten food
+    timeBonusScore = 100 + speedModificator * 100;
+    if (!wallsActivated) {
+      timeBonusScore = 20 + speedModificator * 20;
+    }
   } else {
     // Remove the last part of snake body
     snake.pop();
@@ -274,7 +277,6 @@ function main() {
     window.location.href = './game_over.html';
     window.localStorage.setItem('Score', score);
   }
-
   changingDir = false;
   setTimeout(() => {
     timeBonusScore -= 1;
@@ -295,9 +297,9 @@ const startGame = setInterval(() => {
   if (timeleft < 0) {
     clearInterval(startGame);
     countDownDisplay.style.display = 'none';
-    main();
     genFood();
     drawSnake();
+    main();
   } else {
     countDownDisplay.innerHTML = timeleft;
     timeleft--;
