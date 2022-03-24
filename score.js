@@ -1,7 +1,12 @@
 // Night Mode
+const iconScore = document.getElementById('iconScore');
+
 function theme() {
   if (localStorage.getItem('darkmode') === 'activated') {
     document.body.classList.add('dark');
+    iconScore.setAttribute('src', './assets/star-night.png');
+  } else {
+    iconScore.setAttribute('src', './assets/star-orange.png');
   }
 }
 theme();

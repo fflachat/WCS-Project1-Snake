@@ -258,6 +258,7 @@ function moveSnake() {
 
 // Night Mode
 const imgGamePad = document.querySelector('.gamepadBtn');
+const iconPlay = document.getElementById('iconPlay');
 function theme() {
   if (localStorage.getItem('darkmode') === 'activated') {
     document.body.classList.add('dark');
@@ -265,8 +266,10 @@ function theme() {
     imgGamePad.style.backgroundImage = `url('./assets/GamePad${imgSuffix}.png')`;
     secondColor = '#57acdc';
     thridColor = '#e91e63';
+    iconPlay.setAttribute('src', './assets/play-circle-outlined-night.png');
   } else {
     imgGamePad.style.backgroundImage = `url('./assets/GamePad${imgSuffix}.png')`;
+    iconPlay.setAttribute('src', './assets/play-circle-outlined-orange.png');
   }
 }
 
