@@ -186,7 +186,6 @@ function changeDir(event) {
   if (changingDir) return;
   changingDir = true;
   const dir = event.keyCode || event.target.value;
-  console.log(dir);
   const goingUp = dy === -10;
   const goingDown = dy === 10;
   const goingRight = dx === 10;

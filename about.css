@@ -32,17 +32,17 @@ body {
 nav {
   background-color: var(--thridColor);
   height: 10vh;
-  margin: 0.8rem;
+  margin: 0px 49px 0px 3px;
+  /* margin: 0.8rem;  */
   position: absolute;
   bottom: 0;
-  width: 95%;
+  width: 98%;
   border-radius: 10px;
   box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
 form {
   margin-bottom: 10px !important;
-  /* background-color: transparent !important; */
 }
 
 .gridNav {
@@ -78,6 +78,9 @@ a {
 /*  Corsps de la page */
 
 .about_us {
+  width: 100%;
+  margin: 5px 0px 0px 0px;
+  /* height: 4vh; */
   align-items: center;
   text-align: center;
 }
@@ -98,11 +101,16 @@ a {
 
 .presentation img {
   width: 100%;
+  background-size: cover !important;
   height: 29vh;
 }
 .presentation p {
+  font-size: 16px;
+  color: black;
   text-align: center;
+  font-weight: normal;
   padding-top: 10px;
+  font-weight: bolder;
   margin-left: auto;
   font-family: Roboto;
 }
@@ -127,7 +135,7 @@ a {
   font-weight: bold;
   font-size: 15px;
   align-items: center;
-  height: 32px;
+  height: 39px;
   color: var(--fourthColor);
   background: var(--thridColor);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -159,6 +167,12 @@ a {
   background-color: #1a1a1a;
   color: white;
 }
+input:checked[type='text'] {
+  background: var(--secondColor) !important;
+}
+input:hover {
+  background: var(--secondColor) !important;
+}
 
 #message {
   height: 15vh;
@@ -171,6 +185,9 @@ a {
   text-align: center;
 }
 
+input:checked[type='text'] {
+  background: var(--secondColor) !important;
+}
 textarea::placeholder,
 input::placeholder {
   color: white;
@@ -206,6 +223,7 @@ input::placeholder {
 
   .about_us {
     display: flex;
+    margin-top: 30px;
     align-items: center;
     text-align: center;
   }
@@ -240,15 +258,23 @@ input::placeholder {
     box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
   }
+  textarea::placeholder {
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+  }
+  input:checked[type='text'] {
+    background: var(--secondColor) !important;
+  }
 
   .presentation {
     height: 55vh;
     margin-top: 15px;
   }
-
   .presentation img,
   .presentation p {
-    width: 58%;
+    width: 42%;
+    background-size: auto !important;
     height: 20vh;
     background: var(--secondColor);
     box-shadow: inset 0px 2px 10px rgba(0, 0, 0, 0.5);
@@ -256,22 +282,21 @@ input::placeholder {
   }
   .presentation img {
     height: 20vh;
-    background-size: cover !important;
+    /* background-size: auto; */
     display: block;
     margin: auto;
     text-align: center;
   }
-  image {
-    background-size: cover !important;
-  }
   .presentation p {
-    width: 58%;
+    width: 42%;
     color: white;
     padding-top: 1%;
     font-weight: normal;
     text-align: center;
     align-items: center;
-    margin-right: 21%;
+    margin-left: 29%;
+    height: 22vh;
+    font-size: 15px;
   }
   footer {
     background-color: var(--thridColor);
